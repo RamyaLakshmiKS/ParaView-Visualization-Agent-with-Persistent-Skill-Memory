@@ -4,6 +4,8 @@ description: After finishing a visualization task, extract lessons and append th
 ---
 # Reflect and Save
 
+Task context: $ARGUMENTS
+
 Review what just happened on this task and update `memory/memory.json`.
 
 1. Add ONE **episodic** record:
@@ -19,6 +21,12 @@ Curation rules (do NOT bloat memory):
 - Keep each record to one or two sentences.
 - Store the LESSON, not transcripts, full scripts, or file dumps.
 - Never store secrets or API keys.
+- **Store transferable procedures, NOT data-specific constants.** A lesson must be
+  valid on a volume you have never seen. Record rules relative to the data's *measured*
+  scalar range (e.g. "place opacity control points at ~10%/50%/90% of the actual min–max
+  range"), never absolute scalar values, fixed dimensions, dtype, or camera numbers tied
+  to one dataset. If a value only makes sense for this specific file, it belongs in the
+  episodic `params` as a reference point — not as a semantic rule.
 
 Write valid JSON back to `memory/memory.json`, preserving the
 `{"episodic": [...], "semantic": [...], "corrective": [...]}` structure.
