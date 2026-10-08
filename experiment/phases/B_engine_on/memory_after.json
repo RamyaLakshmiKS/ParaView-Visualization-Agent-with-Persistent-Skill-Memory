@@ -1,0 +1,84 @@
+{
+  "episodic": [
+    {
+      "id": "ep-bonsai-1",
+      "task": "volume render bonsai.raw as a potted tree (brown pot, silver branch, golden leaves)",
+      "dataset_type": "raw scalar volume (uint8), headerless",
+      "what_worked": "Measured scalar range at runtime and placed all opacity/color control points as fractions of that range. A hard opacity=0 plateau below ~25% of range removed the low-value speckle haze. Shading on gave the tree 3D form.",
+      "params": {
+        "measured_range_example": "[0,255] for this file (reference only, re-measure per dataset)",
+        "background_cutoff_frac": 0.22,
+        "opacity_fracs": "0 until 0.22, then ramp 0.06->0.14->0.40->0.90",
+        "camera": "ResetCamera then Azimuth 30, Elevation -15"
+      },
+      "outcome": "Clear potted bonsai: distinct trunk, branches, bowl pot; haze eliminated.",
+      "timestamp": "2026-10-08T13:56:00-04:00"
+    },
+    {
+      "id": "ep-engine-1",
+      "task": "volume render engine.raw so dense inner parts stand out and the outer shell is faint",
+      "dataset_type": "raw scalar volume (uint8), headerless",
+      "what_worked": "Recalled bonsai lessons: inspected range first, built a range-relative transfer function, and applied a hard background cutoff from the start so NO haze appeared (no haze retry needed). Gave the broad low/mid shell band very low opacity and the dense high band high opacity so the interior reads.",
+      "params": {
+        "measured_range_example": "[0,255] for this file (reference only, re-measure per dataset)",
+        "background_cutoff_frac": 0.16,
+        "shell_opacity_frac": "~0.015-0.04 over fracs 0.22-0.48 (faint)",
+        "dense_opacity_frac": "ramp to ~0.8-0.98 above frac 0.52",
+        "color": "cool pale grey shell -> warm gold/orange/red dense interior"
+      },
+      "outcome": "Haze-free engine; internal cavities visible, dense block stands out. One opacity tweak to make the shell fainter; haze never occurred because the cutoff lesson transferred.",
+      "timestamp": "2026-10-08T13:58:00-04:00"
+    }
+  ],
+  "semantic": [
+    {
+      "id": "sem-range-relative-tf",
+      "rule": "Inspect the data's actual scalar min/max at runtime and place every opacity/color control point as a FRACTION of that measured range, never as a fixed scalar value.",
+      "evidence_ids": [
+        "ep-bonsai-1",
+        "ep-engine-1"
+      ],
+      "confidence": 0.9
+    },
+    {
+      "id": "sem-background-cutoff",
+      "rule": "Low scalar values are usually background/noise: hold opacity flat at 0 up to a cutoff fraction (~0.15-0.25 of range), then ramp up. This removes the speckle 'haze' that otherwise fogs the render.",
+      "evidence_ids": [
+        "ep-bonsai-1",
+        "ep-engine-1"
+      ],
+      "confidence": 0.9
+    },
+    {
+      "id": "sem-verify-by-eye",
+      "rule": "Always render then LOOK at the PNG; fix opacity/color before finishing. The first transfer function is rarely right.",
+      "evidence_ids": [
+        "ep-bonsai-1",
+        "ep-engine-1"
+      ],
+      "confidence": 0.9
+    },
+    {
+      "id": "sem-faint-shell-opaque-core",
+      "rule": "To reveal interior structure, give the broad outer/low-mid band very low opacity (ghosted) and reserve high opacity for the dense high-value band, with warm bright color on the dense part and cool dim color on the shell.",
+      "evidence_ids": [
+        "ep-engine-1"
+      ],
+      "confidence": 0.7
+    }
+  ],
+  "corrective": [
+    {
+      "id": "cor-haze",
+      "mistake": "Gave low-value voxels nonzero opacity, producing a brown speckle 'haze' cloud around the subject.",
+      "fix": "Raise the background cutoff: keep opacity 0 until ~0.15-0.25 of the measured range so only real structure is visible.",
+      "times_seen": 1
+    },
+    {
+      "id": "cor-density-color-assumption",
+      "mistake": "Assumed density increases monotonically with the semantic part (e.g. pot<branch<leaves), which inverted the colors.",
+      "fix": "Do not assume which structure is densest. Inspect value distribution (and spatial/height distribution if needed) to decide which scalar band maps to which part before assigning colors.",
+      "times_seen": 1
+    }
+  ]
+}

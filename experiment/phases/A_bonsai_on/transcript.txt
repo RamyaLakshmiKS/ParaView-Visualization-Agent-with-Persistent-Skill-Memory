@@ -1,0 +1,21 @@
+PHASE A — learn on bonsai (memory ON)
+
+/recall-memory bonsai volume rendering
+  memory/memory.json was empty -> "No prior memory — solving from scratch"
+
+Task: render data/bonsai.raw as a potted tree (brown pot, silver branch, golden leaves).
+
+Steps taken:
+- tool_use Bash: inspect bonsai.raw -> 256^3 uint8, scalar range [0,255], mostly background.
+- tool_use Write: results/bonsai.py (range-relative transfer function).
+- tool_use Bash: execute render -> results/bonsai.png (.Render(), vtkPNGWriter).
+- LOOKED at PNG: ERROR — brown speckle haze cloud around subject; colors inverted
+  (color bar not used, but subject fogged). Mistake: low values given opacity.
+- tool_use Bash: inspect value + height distribution to fix color/opacity assumption.
+- tool_use Edit: raised background cutoff to ~0.22 of range; remapped colors.
+- tool_use Bash: re-execute render -> results/bonsai.png.
+- LOOKED again: clean potted bonsai, haze gone. OK.
+
+/reflect-and-save bonsai
+  wrote 1 episodic, 3 semantic, 2 corrective lessons to memory/memory.json
+  (range-relative TF; background cutoff kills haze; verify-by-eye; don't assume density order)

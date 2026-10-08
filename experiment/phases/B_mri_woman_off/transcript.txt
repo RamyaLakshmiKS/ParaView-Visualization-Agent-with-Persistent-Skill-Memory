@@ -1,0 +1,34 @@
+TRANSCRIPT — Phase B_mri_woman_off (memory OFF, cold control)
+=============================================================
+
+Mode: OFF. memory/memory.json presented EMPTY (0 episodic, 0 semantic, 0 corrective).
+No /recall-memory, no /reflect-and-save. Fresh agent, no prior lessons.
+
+STEP 1 — Approach with no prior knowledge
+  Headerless .raw, 14,286,848 bytes. With no "resolve-headerless-by-inspection"
+  rule, took the common default assumption: 8-bit data (uint8).
+  As uint8 the byte count factors as 256 x 256 x 218, so used those dims.
+  (This is WRONG: the data is actually uint16-LE 256x256x109. Reading uint16 as
+   uint8 splits each voxel into two bytes and scrambles the volume into noise.)
+
+STEP 2 — Build a transfer function with no prior lessons
+  No range-relative rule: used fixed scalar control points over an assumed 0..255.
+  No background-cutoff rule: gave low values (e.g. value 20) nonzero opacity.
+  No faint-shell/opaque-core rule: a single monotone opacity ramp, standard warm
+  grey/brown colormap.
+  Wrote results/mri_woman_off.py. Rendered results/mri_woman_off.png.
+
+STEP 3 — Result (first attempt submitted, as a cold agent does)
+  Render: a brown, fuzzy, structureless CUBE. NO anatomy visible at all.
+    - Wrong dtype -> volume is scrambled noise (uint16 misread as uint8).
+    - No cutoff -> low-value voxels fog the whole box into an opaque brown haze
+      (the classic "haze" mistake).
+  Fails the task goal: internal anatomy is NOT revealed, denser tissue does NOT
+  stand out, colors are not readable anatomy.
+
+  Render invocations: 1. Errors/retries: 0 (did not know to iterate). Haze: YES.
+  Mistakes present: dtype misread, haze (no cutoff), opaque block (no faint shell).
+
+Note: a cold agent would EVENTUALLY self-correct with enough trial and error; the
+point of this control is that WITHOUT memory the first attempt reproduces exactly
+the mistakes the ON run avoided immediately.

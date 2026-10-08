@@ -1,0 +1,31 @@
+PHASE B-ON — solve engine WITH memory (memory ON)
+
+/recall-memory engine volume rendering
+  Lessons I'm applying (from bonsai):
+   - sem-range-relative-tf: measure real scalar range, build TF from fractions of it.
+   - sem-background-cutoff / cor-haze: keep opacity 0 below ~0.15-0.25 of range to kill haze.
+   - cor-density-color-assumption: inspect value distribution before assigning colors.
+   - sem-verify-by-eye: render, look, fix.
+
+Task: render data/engine.raw so dense inner parts stand out, outer shell faint.
+
+Steps taken:
+- tool_use Bash: inspect engine.raw -> 256x256x128 uint8, range [0,255]; dense band at
+  values ~127-145, broad faint shell band below. (applied inspect-first lesson)
+- tool_use Write: results/engine.py with a range-relative transfer function AND a hard
+  background cutoff at frac 0.16 FROM THE START (applied cor-haze lesson preemptively).
+- tool_use Bash: execute render -> results/engine.png (.Render(), vtkPNGWriter).
+- LOOKED at PNG: NO haze (cutoff lesson worked first try). Interior cavities visible.
+  Shell slightly too prominent -> one opacity tweak to make shell fainter.
+- tool_use Edit: lowered shell opacity (frac 0.22-0.48 -> ~0.015-0.04).
+- tool_use Bash: re-execute render.
+- LOOKED again: haze-free, dense structure stands out, readable. OK.
+
+Key transfer evidence: the haze mistake from bonsai did NOT recur — the background-cutoff
+lesson was applied up front, so zero haze-removal retries were needed.
+
+/reflect-and-save engine
+  added ep-engine-1; strengthened sem-range-relative-tf, sem-background-cutoff,
+  sem-verify-by-eye (confidence 0.8->0.9, evidence += ep-engine-1); added
+  sem-faint-shell-opaque-core. cor-haze times_seen kept at 1 (did NOT recur).
+  memory now: 2 episodic, 4 semantic, 2 corrective.

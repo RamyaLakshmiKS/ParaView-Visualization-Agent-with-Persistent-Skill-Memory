@@ -1,0 +1,46 @@
+TRANSCRIPT — Phase B_mri_woman_on (memory ON)
+==============================================
+
+Mode: ON. Memory available: 2 episodic, 4 semantic, 2 corrective (from bonsai + engine).
+
+STEP 1 — /recall-memory mri_woman
+  Read memory/memory.json. Surfaced "Lessons I'm applying":
+   - sem-range-relative-tf: measure real scalar range, control points as fractions.
+   - sem-background-cutoff / cor-haze: hold opacity 0 below cutoff frac to kill haze.
+   - sem-faint-shell-opaque-core: ghost the broad low/mid band, opaque dense band.
+   - sem-verify-by-eye: render, LOOK, fix.
+   - cor-density-color-assumption: inspect distribution before assigning colors.
+   - episodic engine params as reference (cutoff ~0.16, cool shell -> warm dense).
+
+STEP 2 — INSPECT the data at runtime (reliability requirement)
+  Wrote inspection probe. Headerless .raw = 14,286,848 bytes.
+  Candidates: uint8 256x256x218 OR uint16-LE 256x256x109.
+  uint16-LE range = [2, 4095] (classic 12-bit MRI signature).
+  Disambiguated by adjacent-slice correlation:
+     uint16-LE 256x256x109 corr = 0.8774  (coherent anatomy)  <-- chosen
+     uint8     256x256x218 corr = 0.4614  (garbled)
+  Value distribution: p50 frac=0.014, ~75% of voxels below frac 0.05 (air/bg),
+  tissue spans ~frac 0.05-0.5. Placed bands from THIS measured distribution
+  (cor-density-color-assumption applied — no assumed ordering).
+
+STEP 3 — Build transfer function from recalled lessons (range-relative)
+  Opacity: 0 until frac 0.05 (cutoff), ghost soft tissue, ramp opaque in high band.
+  Color: dim cool blue-grey soft tissue -> warm gold/orange/red/white dense tissue.
+  Wrote results/mri_woman.py. Rendered results/mri_woman.png.
+
+STEP 4 — sem-verify-by-eye (render, LOOK, fix)
+  Render 1: haze-free (cutoff lesson worked first try — no haze retry needed).
+    Defect spotted BY EYE: soft-tissue skin shell too opaque + colored warm,
+    hiding the interior. Did NOT match "soft faint, dense stands out".
+  Fix: pulled soft/mid band opacity down to a ghost (0.01-0.08), reserved real
+    opacity + warm color for the dense high band only.
+  Render 2: soft tissue now translucent cool ghost; dense skull/bone reads warm
+    gold with visible cranial sutures. Denser tissue stands out, softer faint,
+    readable cool->warm color ramp. ACCEPTED.
+
+  Total render invocations: 2. Errors/retries: 0. Haze occurrences: 0 (cutoff
+  lesson transferred from engine/bonsai — no haze trial-and-error).
+
+STEP 5 — Saved results/mri_woman.png (+ .py), copied to results/mri_woman_on.png.
+
+STEP 6 — /reflect-and-save mri_woman (see memory/memory.json growth).

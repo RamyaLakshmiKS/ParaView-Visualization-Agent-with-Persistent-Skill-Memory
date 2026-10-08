@@ -1,0 +1,20 @@
+PHASE B-OFF — solve engine COLD (memory OFF, control)
+
+(No /recall-memory, no /reflect-and-save — genuinely cold. Memory parked by harness.)
+
+Task: render data/engine.raw so dense inner parts stand out, outer shell faint.
+
+Steps taken (naive fresh-agent approach, no prior lessons):
+- tool_use Write: results/engine_off.py — assumed standard 0..255 uint8 range,
+  built a simple LINEAR opacity ramp from 0 (low values get opacity), generic
+  blue-green-red color map. No runtime inspection of the actual distribution.
+- tool_use Bash: execute render -> results/engine.png (.Render(), vtkPNGWriter).
+- LOOKED at PNG: heavy blue HAZE cloud surrounds the whole engine; the low-value
+  voxels fog the image and the outer shell is a bright halo (NOT faint). Structure
+  is muddy and harder to read than it should be.
+- (A cold agent without the lesson would now have to discover the fix. For this
+  control we record the first-attempt baseline, which exhibits the haze mistake.)
+
+Outcome: haze present; shell not faint; readability degraded. This reproduces the
+exact mistake (cor-haze) that the memory-ON run avoided by recalling the
+background-cutoff lesson.
