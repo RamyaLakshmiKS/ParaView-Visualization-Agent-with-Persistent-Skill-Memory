@@ -1,24 +1,9 @@
 Task:
-Load the MRI head/body volume dataset from data/mri_woman.raw. This is a headerless
-.raw scalar field, so you must determine its shape and data type before rendering.
+Render a volume visualization of the dataset at data/mri_woman.raw (a raw MRI scalar
+volume field).
 
-The file is 14,286,848 bytes. Two readings are consistent with that size:
-  - 256 x 256 x 109, uint16  (16-bit MRI intensities — most likely)
-  - 256 x 256 x 218, uint8
+Goal:
+Reveal the internal anatomical structure clearly, with denser tissue standing out and
+softer tissue faint. Use colors that make the anatomy readable.
 
-Determine which is correct by inspecting the data (e.g. reshape under each hypothesis,
-check that the scalar range and slice structure look like anatomy, not noise). Use the
-interpretation that produces a coherent volume.
-
-Then visualize it with volume rendering:
-- Reveal internal anatomical structure (e.g. soft tissue semi-transparent, denser
-  structure more opaque). Choose colors that make the structure readable.
-- Build the opacity and color transfer functions relative to the data's MEASURED
-  scalar range — do not assume 0-255.
-
-Requirements:
-- White background. Render at 1024x1024.
-- Do NOT show a color bar or orientation axes.
-- Save the image to results/mri_woman.png and the render script to results/mri_woman.py.
-
-Think step by step and find an optimal view.
+Save the image to results/mri_woman.png and the render script to results/mri_woman.py.

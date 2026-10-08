@@ -1,13 +1,9 @@
 Task:
-Load the bonsai volume dataset (a 256x256x256 uint8 .raw scalar field) from
-data/bonsai.raw.
+Render a volume visualization of the dataset at data/bonsai.raw (a raw scalar
+volume field).
 
-Visualize it with volume rendering and reach this goal:
-"A potted tree with a brown pot, silver branch, and golden leaves."
+Goal:
+Produce a clear image of "a potted tree with a brown pot, silver branch, and golden
+leaves."
 
-Requirements:
-- White background. Render at 1024x1024.
-- Do NOT show a color bar or orientation axes.
-- Save the image to results/bonsai.png and the render script to results/bonsai.py.
-
-Think step by step and fulfill the visualization goal.
+Save the image to results/bonsai.png and the render script to results/bonsai.py.

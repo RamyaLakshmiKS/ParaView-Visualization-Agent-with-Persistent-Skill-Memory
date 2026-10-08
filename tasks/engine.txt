@@ -1,14 +1,9 @@
 Task:
-Load the engine volume dataset (a 256x256x128 uint8 .raw scalar field) from
-data/engine.raw.
+Render a volume visualization of the dataset at data/engine.raw (a raw scalar
+volume field).
 
-Visualize it with volume rendering:
-- Make the outer part more transparent and the inner part more solid.
-- Use light blue for the outer part and orange for the inner part.
+Goal:
+Show the engine's internal structure clearly — the dense inner parts should stand out
+and the outer shell should be faint. Use colors that make the structure readable.
 
-Requirements:
-- White background. Render at 1024x1024.
-- Do NOT show a color bar or orientation axes.
-- Save the image to results/engine.png and the render script to results/engine.py.
-
-Think step by step and find an optimal view.
+Save the image to results/engine.png and the render script to results/engine.py.
