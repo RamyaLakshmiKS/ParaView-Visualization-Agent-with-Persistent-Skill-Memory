@@ -44,8 +44,6 @@ artifacts. The strongest evidence lives in the repository itself:
   each run plus a transcript.
 - **The persistent memory store** — [`memory/memory.json`](memory/memory.json).
 
-> There is no video or blog link yet. If one is added later, it belongs in this section.
-
 ---
 
 ## The Problem and Research Objective
