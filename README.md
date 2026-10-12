@@ -782,12 +782,3 @@ the terms governing the data.
 ## License and Contributions
 
 Licensed under the [MIT License](LICENSE) — © 2026 RamyaLakshmi KS.
-
-Contributions, issues, and feature requests are welcome:
-
-1. Fork the repository.
-2. Create a feature branch: `git checkout -b feature/your-feature`.
-3. Commit your changes.
-4. Push the branch and open a Pull Request.
-
-Please open an issue first to discuss any significant change.
