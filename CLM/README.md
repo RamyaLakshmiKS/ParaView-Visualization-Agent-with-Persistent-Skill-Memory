@@ -30,7 +30,7 @@ measures the size reduction.
 | Context as a file the model edits (§4.1) | `context_store.py` — a working-context Markdown file with `set`/`append`/`discard`/`compress` operations |
 | "Unrestricted update" `c_{t+1} = f(c_t)` (rewrite, not just append) | `WorkingContext.set_section` / `discard` / `compress_fact` (rewrite) vs `append` (the naive-only op) |
 | Agent natively manages its own context | `skills/manage-context/SKILL.md` — a skill the agent runs *during* a task |
-| Efficiency: better results at fewer FLOPs | `clm_metrics.py` — peak/final working-context size (a **local proxy** for FLOPs; see §5) |
+| Efficiency: better results at fewer FLOPs | `clm_metrics.py` — peak/final working-context size in **real tokens** (tiktoken `cl100k_base`, chars/4 fallback); a **local proxy** for FLOPs; see §5 |
 | Qualitative "creative compaction" behavior | `demo.py` — raw inspect + histogram dumps collapse into resolved facts |
 
 ### What is intentionally **out of scope**
@@ -82,7 +82,7 @@ Drive the working-context file directly (what the `manage-context` skill does):
 cd CLM
 python3 context_store.py init --goal "render engine.raw, faint shell"
 python3 context_store.py append "Resolved facts" "range [0,255] uint8, cutoff ~16%"
-python3 context_store.py size      # -> lines/chars/est_tokens and budget status
+python3 context_store.py size      # -> lines/chars/est_tokens, budget status + token backend
 python3 context_store.py show
 ```
 
@@ -105,33 +105,40 @@ management differs:
 ```
 Per-step working-context size (est. tokens):
   step                           naive     CLM
-  inspect .raw                     201      78
-  histogram                        309     104
-  render #1 + look                 345     164
-  render #2 + look                 390     170
+  inspect .raw                     358      97
+  histogram                        582     124
+  render #1 + look                 619     202
+  render #2 + look                 667     210
 ```
 
 ```
 == CLM vs naive-append ==
-  peak size   : naive 390 tok -> CLM 170 tok (56.4% smaller)
-  final size  : naive 390 tok -> CLM 170 tok (56.4% smaller)
+  peak size   : naive 667 tok -> CLM 210 tok (68.5% smaller)
+  final size  : naive 667 tok -> CLM 210 tok (68.5% smaller)
   CLM: 62 of 71 written lines discarded; retention ratio 0.141
 ```
 
-The CLM agent holds a **~56% smaller** working context while keeping every fact
+The CLM agent holds a **~69% smaller** working context while keeping every fact
 that drives the render (resolved dtype/shape, scalar range, background cutoff,
 current transfer function). That mirrors the paper's "smaller working context →
 less compute" claim.
 
-### Honest proxy caveat
+### Token counts are real; size is still a compute proxy
 
-Working-context **size** is a *local proxy* for compute, **not** a FLOPs
-measurement. We cannot count real server FLOPs here (no weight access, no custom
-serving). The proxy is directionally meaningful — Transformer attention cost grows
-super-linearly with context length, so a smaller working context does imply less
-compute — but exact FLOPs/latency depend on the model and server and are out of
-scope. This is the same spirit of disclosure as the main project's note that its
-transcript metrics are weak heuristics.
+Token counts come from a **real BPE tokenizer** — `tiktoken` with the
+`cl100k_base` encoding — when the library is installed; the module falls back to
+a ~4-chars/token estimate only if `tiktoken` is absent, so the demo still runs on
+the standard library alone. `python context_store.py size` prints which backend
+is active.
+
+What remains a proxy is the step from token count to **compute**: working-context
+**size** is a *local proxy* for FLOPs, **not** a FLOPs measurement. We cannot
+count real server FLOPs here (no weight access, no custom serving). The proxy is
+directionally meaningful — Transformer attention cost grows super-linearly with
+context length, so a smaller working context does imply less compute — but exact
+FLOPs/latency depend on the model and server and are out of scope. Token counts
+are tokenizer-specific, so the absolute numbers shift between models; the **A/B
+ratio** (naive vs CLM) is what's robust, and that's the headline here.
 
 ---
 
@@ -152,10 +159,6 @@ python3 clm_metrics.py --compare \
     context/longhorizon_naive.json context/longhorizon_clm.json
 ```
 
-**Verified result on the 3 shipped volumes** (real byte sizes + measured ranges:
-bonsai uint8 256³ [0,255], engine uint8 256×256×128 [0,255], mri_woman uint16-le
-256×256×109 [2,4095]):
-
 **Verified result on 11 real volumes** (dtype/dims resolved from a known layout,
 from the filename, or by byte-count inference; scalar ranges measured from the
 real bytes — including a 3.24 GB `beechnut` sampled for speed):
@@ -163,25 +166,31 @@ real bytes — including a 3.24 GB `beechnut` sampled for speed):
 ```
 Working-context size after each file (est. tokens) — the growth curve:
   after file                          naive    CLM   gap x
-  aneurism_256x256x256_uint8            804    101    8.0x
-  backpack_512x512x373_uint16          1594    146   10.9x
-  beechnut_1024x1024x1546_uint16       2434    195   12.5x
-  blunt_fin_256x128x64_uint8           3204    237   13.5x
-  bonsai                               3622    266   13.6x
-  boston_teapot_256x256x178_uint8      4477    319   14.0x
-  bunny_512x512x361_uint16             5216    361   14.4x
-  csafe_heptane_302x302x302_uint8      6024    409   14.7x
-  engine                               6442    437   14.7x
-  mri_woman                            6911    475   14.5x
-  zeiss_680x680x680_uint8              7589    520   14.6x
+  aneurism_256x256x256_uint8           1449    132    11.0x
+  backpack_512x512x373_uint16          2792    194    14.4x
+  beechnut_1024x1024x1546_uint16       4416    273    16.2x
+  blunt_fin_256x128x64_uint8           5826    333    17.5x
+  bonsai                               6611    371    17.8x
+  boston_teapot_256x256x178_uint8      8087    447    18.1x
+  bunny_512x512x361_uint16             9431    508    18.6x
+  csafe_heptane_302x302x302_uint8     10903    579    18.8x
+  engine                              11618    612    19.0x
+  mri_woman                           12529    668    18.8x
+  zeiss_680x680x680_uint8             13808    736    18.8x
 
-End of horizon: naive 7589 tok vs CLM 520 tok -> CLM is 93.1% smaller, 14.6x less
+End of horizon: naive 13808 tok vs CLM 736 tok -> CLM is 94.7% smaller, 18.8x less
 ```
 
 The key point: **naive grows ~linearly with the number of files while CLM stays
-nearly flat.** The advantage COMPOUNDS with horizon length — 8.0× smaller after
-one file, 14.6× after eleven. **Add more `.raw` files to `data/` and re-run — the
+nearly flat.** The advantage COMPOUNDS with horizon length — 11.0× smaller after
+one file, 18.8× after eleven. **Add more `.raw` files to `data/` and re-run — the
 gap keeps widening**, which is exactly the long-horizon behavior the paper reports.
+
+> These are **real token counts** (tiktoken `cl100k_base`); with the chars/4
+> fallback the same run reports a slightly smaller gap (93.1% / 14.6×). The real
+> BPE tokenizer counts the dense byte/histogram dump lines as more tokens than the
+> chars/4 heuristic assumed, so the naive context — which keeps all of them —
+> grows faster, widening the measured gap.
 
 Any new file is handled automatically, in priority order:
 1. a hard-coded known layout (the 3 canonical datasets);

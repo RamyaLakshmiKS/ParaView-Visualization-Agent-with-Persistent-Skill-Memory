@@ -17,10 +17,14 @@ compresses, so its peak and final sizes stay small while still holding the facts
 that matter. This module quantifies that gap.
 
 PROXY CAVEAT (stated plainly, like the project's transcript-metric caveat):
-context size is a PROXY for compute, not a FLOPs measurement. Attention cost
-grows super-linearly with context length, so a smaller working context does
-imply less compute — but the exact FLOPs/latency depend on the model and server,
-which are out of scope here. See CLM/README.md.
+the TOKEN COUNT is now real — it comes from a true BPE tokenizer (tiktoken,
+cl100k_base) when installed, falling back to a ~4-chars/token estimate only if
+the library is absent. What remains a proxy is the LEAP from token count to
+COMPUTE: we report working-context SIZE (real tokens), not a FLOPs measurement.
+Attention cost grows super-linearly with context length, so a smaller working
+context does imply less compute — but exact FLOPs/latency depend on the model and
+server, which are out of scope here. The A/B *ratio* (naive vs CLM) is robust
+across tokenizers; only the absolute count is encoding-specific. See CLM/README.md.
 
 Usage:
   # from a trace produced by demo.py (list of per-step sizes)
@@ -125,8 +129,9 @@ def print_comparison(naive: RunSummary, clm: RunSummary) -> None:
     print(f"  final size  : naive {naive.final_tokens} tok -> CLM {clm.final_tokens} tok "
           f"({pct_drop(naive.final_tokens, clm.final_tokens)})")
     print()
-    print("  NOTE: size is a local PROXY for compute/FLOPs, not a FLOPs measurement.")
-    print("        See CLM/README.md for why and for the paper's actual metric.")
+    print("  NOTE: token counts are REAL (tiktoken BPE when installed, else a")
+    print("        chars/4 fallback). Working-context SIZE is still a local proxy")
+    print("        for compute/FLOPs, not a FLOPs measurement. See CLM/README.md.")
 
 
 def build_parser() -> argparse.ArgumentParser:

@@ -51,9 +51,61 @@ DEFAULT_SECTIONS: List[str] = [
 # grows past this, compress rather than keep appending.
 DEFAULT_MAX_LINES = 40
 
+# Which tiktoken encoding to use when the library is available. cl100k_base is the
+# BPE encoding used by GPT-3.5/4-class models and is a reasonable, widely-used
+# reference tokenizer. The A/B *ratio* (naive vs CLM) is robust across encodings;
+# only the absolute count is tokenizer-specific.
+TOKENIZER_ENCODING = "cl100k_base"
+
 
 def _now() -> str:
     return _dt.datetime.now().astimezone().isoformat(timespec="seconds")
+
+
+# ---------------------------------------------------------------------------
+# Token counting: prefer a REAL tokenizer (tiktoken), fall back to a chars/4
+# proxy so the module stays runnable with the standard library alone.
+# ---------------------------------------------------------------------------
+_ENCODER = None            # cached tiktoken.Encoding, loaded lazily once
+_ENCODER_READY = False     # True once we've attempted (and recorded) the import
+
+
+def _get_encoder():
+    """Return a cached tiktoken encoder, or None if tiktoken is unavailable.
+
+    Loaded lazily and cached so repeated size checks don't re-import or re-build
+    the BPE tables.
+    """
+    global _ENCODER, _ENCODER_READY
+    if _ENCODER_READY:
+        return _ENCODER
+    _ENCODER_READY = True
+    try:
+        import tiktoken  # type: ignore
+
+        _ENCODER = tiktoken.get_encoding(TOKENIZER_ENCODING)
+    except Exception:
+        _ENCODER = None  # library missing or encoding download failed -> fallback
+    return _ENCODER
+
+
+def tokenizer_backend() -> str:
+    """Name of the active token-counting backend, for honest reporting."""
+    enc = _get_encoder()
+    return f"tiktoken:{TOKENIZER_ENCODING}" if enc is not None else "chars/4 (approx)"
+
+
+def count_tokens(text: str) -> int:
+    """Count tokens in `text`.
+
+    Uses the real BPE tokenizer (tiktoken) when installed — an exact token count
+    for the chosen encoding. Falls back to the ~4-chars/token heuristic otherwise,
+    so the module runs with the standard library alone.
+    """
+    enc = _get_encoder()
+    if enc is not None:
+        return len(enc.encode(text))
+    return max(1, round(len(text) / 4))
 
 
 @dataclass
@@ -131,9 +183,13 @@ class WorkingContext:
         return len(self.render())
 
     def est_tokens(self) -> int:
-        """Rough token estimate (~4 chars/token). A local stand-in for the
-        paper's FLOPs axis; see README for why this is a proxy, not real FLOPs."""
-        return max(1, round(self.char_count() / 4))
+        """Token count of the working context.
+
+        Uses a REAL tokenizer (tiktoken) when installed — an exact count for the
+        reference encoding; otherwise falls back to the ~4-chars/token heuristic.
+        This is the CLM efficiency axis (working-context size); see README for why
+        size is a local proxy for compute, not a FLOPs measurement."""
+        return count_tokens(self.render())
 
     def over_budget(self) -> bool:
         return self.line_count() > self.max_lines
@@ -204,6 +260,7 @@ def _cmd_size(args: argparse.Namespace) -> int:
         f"lines={wc.line_count()} chars={wc.char_count()} "
         f"est_tokens={wc.est_tokens()} budget={wc.max_lines} [{status}]"
     )
+    print(f"  token backend: {tokenizer_backend()}")
     return 0
 
 

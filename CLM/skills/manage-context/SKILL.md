@@ -57,5 +57,6 @@ still need.
 By managing its own context as a file, the agent holds a smaller, more relevant
 working context — the paper reports better task outcomes at lower compute. Here
 we track the analogue with `python CLM/clm_metrics.py` (peak/final working-context
-size, retained vs discarded). The efficiency signal is working-context SIZE, a
-local proxy for the paper's FLOPs axis — see CLM/README.md.
+size, retained vs discarded). Token counts are REAL (tiktoken `cl100k_base`, with
+a chars/4 fallback when tiktoken is absent); working-context SIZE is a local proxy
+for the paper's FLOPs axis — see CLM/README.md.

@@ -1,2 +1,5 @@
 vtk>=9.3
 numpy
+# Optional: real BPE token counting for the CLM working-context metrics
+# (CLM/clm_metrics.py). If absent, CLM falls back to a chars/4 estimate.
+tiktoken==0.14.0
