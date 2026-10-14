@@ -1,0 +1,141 @@
+{
+  "name": "long-horizon naive (naive-append)",
+  "trace": [
+    {
+      "step": 1,
+      "label": "after aneurism_256x256x256_uint8",
+      "lines": 65,
+      "chars": 3217,
+      "est_tokens": 1449
+    },
+    {
+      "step": 2,
+      "label": "after backpack_512x512x373_uint16",
+      "lines": 129,
+      "chars": 6374,
+      "est_tokens": 2792
+    },
+    {
+      "step": 3,
+      "label": "after beechnut_1024x1024x1546_uint16",
+      "lines": 193,
+      "chars": 9738,
+      "est_tokens": 4416
+    },
+    {
+      "step": 4,
+      "label": "after blunt_fin_256x128x64_uint8",
+      "lines": 257,
+      "chars": 12814,
+      "est_tokens": 5826
+    },
+    {
+      "step": 5,
+      "label": "after bonsai",
+      "lines": 320,
+      "chars": 14490,
+      "est_tokens": 6611
+    },
+    {
+      "step": 6,
+      "label": "after boston_teapot_256x256x178_uint8",
+      "lines": 384,
+      "chars": 17908,
+      "est_tokens": 8087
+    },
+    {
+      "step": 7,
+      "label": "after bunny_512x512x361_uint16",
+      "lines": 448,
+      "chars": 20865,
+      "est_tokens": 9431
+    },
+    {
+      "step": 8,
+      "label": "after csafe_heptane_302x302x302_uint8",
+      "lines": 510,
+      "chars": 24097,
+      "est_tokens": 10903
+    },
+    {
+      "step": 9,
+      "label": "after engine",
+      "lines": 573,
+      "chars": 25770,
+      "est_tokens": 11618
+    },
+    {
+      "step": 10,
+      "label": "after mri_woman",
+      "lines": 636,
+      "chars": 27644,
+      "est_tokens": 12529
+    },
+    {
+      "step": 11,
+      "label": "after zeiss_680x680x680_uint8",
+      "lines": 698,
+      "chars": 30356,
+      "est_tokens": 13808
+    }
+  ],
+  "total_lines_written": 698,
+  "lines_discarded": 0,
+  "per_file": [
+    {
+      "name": "aneurism_256x256x256_uint8",
+      "est_tokens_after": 1449,
+      "lines_after": 65
+    },
+    {
+      "name": "backpack_512x512x373_uint16",
+      "est_tokens_after": 2792,
+      "lines_after": 129
+    },
+    {
+      "name": "beechnut_1024x1024x1546_uint16",
+      "est_tokens_after": 4416,
+      "lines_after": 193
+    },
+    {
+      "name": "blunt_fin_256x128x64_uint8",
+      "est_tokens_after": 5826,
+      "lines_after": 257
+    },
+    {
+      "name": "bonsai",
+      "est_tokens_after": 6611,
+      "lines_after": 320
+    },
+    {
+      "name": "boston_teapot_256x256x178_uint8",
+      "est_tokens_after": 8087,
+      "lines_after": 384
+    },
+    {
+      "name": "bunny_512x512x361_uint16",
+      "est_tokens_after": 9431,
+      "lines_after": 448
+    },
+    {
+      "name": "csafe_heptane_302x302x302_uint8",
+      "est_tokens_after": 10903,
+      "lines_after": 510
+    },
+    {
+      "name": "engine",
+      "est_tokens_after": 11618,
+      "lines_after": 573
+    },
+    {
+      "name": "mri_woman",
+      "est_tokens_after": 12529,
+      "lines_after": 636
+    },
+    {
+      "name": "zeiss_680x680x680_uint8",
+      "est_tokens_after": 13808,
+      "lines_after": 698
+    }
+  ]
+}
