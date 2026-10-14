@@ -1,0 +1,73 @@
+{
+  "kind": "filter16",
+  "files": [
+    "backpack_512x512x373_uint16",
+    "aneurism_256x256x256_uint8",
+    "blunt_fin_256x128x64_uint8",
+    "bonsai"
+  ],
+  "truth": {
+    "backpack_512x512x373_uint16": [
+      0.0,
+      4071.0
+    ]
+  },
+  "planted": {
+    "backpack_512x512x373_uint16": {
+      "dtype": "uint16-le",
+      "bits": 16,
+      "range": [
+        0.0,
+        4071.0
+      ],
+      "dims": [
+        512,
+        512,
+        373
+      ],
+      "voxels": 97779712
+    },
+    "aneurism_256x256x256_uint8": {
+      "dtype": "uint8",
+      "bits": 8,
+      "range": [
+        0.0,
+        255.0
+      ],
+      "dims": [
+        256,
+        256,
+        256
+      ],
+      "voxels": 16777216
+    },
+    "blunt_fin_256x128x64_uint8": {
+      "dtype": "uint8",
+      "bits": 8,
+      "range": [
+        0.0,
+        253.0
+      ],
+      "dims": [
+        256,
+        128,
+        64
+      ],
+      "voxels": 2097152
+    },
+    "bonsai": {
+      "dtype": "uint8",
+      "bits": 8,
+      "range": [
+        0.0,
+        255.0
+      ],
+      "dims": [
+        256,
+        256,
+        256
+      ],
+      "voxels": 16777216
+    }
+  }
+}

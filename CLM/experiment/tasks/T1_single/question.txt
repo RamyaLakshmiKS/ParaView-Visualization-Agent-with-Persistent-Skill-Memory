@@ -1,0 +1,1 @@
+Using only the inspection evidence provided on disk, state the resolved dtype and the measured scalar range of the volume 'aneurism_256x256x256_uint8'. Answer with a single line: dtype=<...>; range=[<min>,<max>].

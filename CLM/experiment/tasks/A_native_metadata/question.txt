@@ -1,0 +1,1 @@
+For the volume-rendering pipeline, you must pick a background opacity cutoff per volume as a FRACTION of its measured range. First identify which volumes are 16-bit (they need special dtype handling). Report: count_16bit=<N>; and list each 16-bit volume as 'name: range=[min,max]'.

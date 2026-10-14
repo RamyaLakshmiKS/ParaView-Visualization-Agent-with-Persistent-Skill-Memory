@@ -1,0 +1,26 @@
+[
+  {
+    "task_id": "T1_single",
+    "tier": 1,
+    "n_files": 1,
+    "distractor": false
+  },
+  {
+    "task_id": "T2_multi",
+    "tier": 2,
+    "n_files": 4,
+    "distractor": false
+  },
+  {
+    "task_id": "T3_revisit_distractor",
+    "tier": 3,
+    "n_files": 11,
+    "distractor": true
+  },
+  {
+    "task_id": "A_native_metadata",
+    "tier": 2,
+    "n_files": 11,
+    "distractor": false
+  }
+]

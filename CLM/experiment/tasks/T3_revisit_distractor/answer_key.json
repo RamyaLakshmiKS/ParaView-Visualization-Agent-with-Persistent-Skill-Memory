@@ -1,0 +1,168 @@
+{
+  "kind": "revisit",
+  "count_16bit": 4,
+  "anchor": "aneurism_256x256x256_uint8",
+  "anchor_dtype": "uint8",
+  "anchor_dims": [
+    256,
+    256,
+    256
+  ],
+  "anchor_voxels": 16777216,
+  "planted": {
+    "aneurism_256x256x256_uint8": {
+      "dtype": "uint8",
+      "bits": 8,
+      "range": [
+        0.0,
+        255.0
+      ],
+      "dims": [
+        256,
+        256,
+        256
+      ],
+      "voxels": 16777216
+    },
+    "backpack_512x512x373_uint16": {
+      "dtype": "uint16-le",
+      "bits": 16,
+      "range": [
+        0.0,
+        4071.0
+      ],
+      "dims": [
+        512,
+        512,
+        373
+      ],
+      "voxels": 97779712
+    },
+    "beechnut_1024x1024x1546_uint16": {
+      "dtype": "uint16-le",
+      "bits": 16,
+      "range": [
+        10129.0,
+        16842.0
+      ],
+      "dims": [
+        1024,
+        1024,
+        1546
+      ],
+      "voxels": 1621098496
+    },
+    "blunt_fin_256x128x64_uint8": {
+      "dtype": "uint8",
+      "bits": 8,
+      "range": [
+        0.0,
+        253.0
+      ],
+      "dims": [
+        256,
+        128,
+        64
+      ],
+      "voxels": 2097152
+    },
+    "bonsai": {
+      "dtype": "uint8",
+      "bits": 8,
+      "range": [
+        0.0,
+        255.0
+      ],
+      "dims": [
+        256,
+        256,
+        256
+      ],
+      "voxels": 16777216
+    },
+    "boston_teapot_256x256x178_uint8": {
+      "dtype": "uint8",
+      "bits": 8,
+      "range": [
+        0.0,
+        255.0
+      ],
+      "dims": [
+        256,
+        256,
+        178
+      ],
+      "voxels": 11665408
+    },
+    "bunny_512x512x361_uint16": {
+      "dtype": "uint16-le",
+      "bits": 16,
+      "range": [
+        0.0,
+        63536.0
+      ],
+      "dims": [
+        512,
+        512,
+        361
+      ],
+      "voxels": 94633984
+    },
+    "csafe_heptane_302x302x302_uint8": {
+      "dtype": "uint8",
+      "bits": 8,
+      "range": [
+        0.0,
+        255.0
+      ],
+      "dims": [
+        302,
+        302,
+        302
+      ],
+      "voxels": 27543608
+    },
+    "engine": {
+      "dtype": "uint8",
+      "bits": 8,
+      "range": [
+        0.0,
+        255.0
+      ],
+      "dims": [
+        256,
+        256,
+        128
+      ],
+      "voxels": 8388608
+    },
+    "mri_woman": {
+      "dtype": "uint16-le",
+      "bits": 16,
+      "range": [
+        2.0,
+        4095.0
+      ],
+      "dims": [
+        256,
+        256,
+        109
+      ],
+      "voxels": 7143424
+    },
+    "zeiss_680x680x680_uint8": {
+      "dtype": "uint8",
+      "bits": 8,
+      "range": [
+        0.0,
+        199.0
+      ],
+      "dims": [
+        680,
+        680,
+        680
+      ],
+      "voxels": 314432000
+    }
+  }
+}

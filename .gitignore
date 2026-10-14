@@ -230,3 +230,9 @@ data/*.raw
 !data/bonsai.raw
 !data/engine.raw
 !data/mri_woman.raw
+
+# --- CLM experiment: regenerable artifacts (keep source, tasks, figs, reports) ---
+__pycache__/
+.DS_Store
+# raw per-run output; all cited evidence is inlined in RESULTS.md
+CLM/experiment/runs/

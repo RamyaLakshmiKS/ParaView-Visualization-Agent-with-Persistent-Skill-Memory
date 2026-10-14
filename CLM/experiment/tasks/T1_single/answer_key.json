@@ -1,0 +1,25 @@
+{
+  "kind": "single",
+  "file": "aneurism_256x256x256_uint8",
+  "dtype": "uint8",
+  "range": [
+    0.0,
+    255.0
+  ],
+  "planted": {
+    "aneurism_256x256x256_uint8": {
+      "dtype": "uint8",
+      "bits": 8,
+      "range": [
+        0.0,
+        255.0
+      ],
+      "dims": [
+        256,
+        256,
+        256
+      ],
+      "voxels": 16777216
+    }
+  }
+}

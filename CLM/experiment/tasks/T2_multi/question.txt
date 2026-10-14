@@ -1,0 +1,1 @@
+Across the volumes ['backpack_512x512x373_uint16', 'aneurism_256x256x256_uint8', 'blunt_fin_256x128x64_uint8', 'bonsai'], list every one whose resolved dtype is 16-bit, with its measured scalar range. If none are 16-bit, say 'none'. Answer as lines 'name: range=[min,max]'.
