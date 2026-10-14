@@ -218,6 +218,7 @@ And this is what it *wrote* into `CTX.md` — its own working memory after compa
 verbatim:
 
 ```markdown
+# Working context
 ## Task
 Count 16-bit volumes; report resolved dtype/dims/voxels of aneurism_256x256x256_uint8.
 
