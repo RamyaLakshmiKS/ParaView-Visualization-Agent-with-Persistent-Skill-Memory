@@ -1,0 +1,199 @@
+## Goal
+- long-horizon: render every volume in data/ in one session
+
+## Resolved facts
+- [bonsai] byte[0]=0x00
+- [bonsai] byte[1]=0x00
+- [bonsai] byte[2]=0x55
+- [bonsai] byte[3]=0x00
+- [bonsai] byte[4]=0x33
+- [bonsai] byte[5]=0xaa
+- [bonsai] byte[6]=0x49
+- [bonsai] byte[7]=0x00
+- [bonsai] byte[8]=0xc7
+- [bonsai] byte[9]=0x99
+- [bonsai] byte[10]=0xd1
+- [bonsai] byte[11]=0x55
+- [bonsai] byte[12]=0x3b
+- [bonsai] byte[13]=0x24
+- [bonsai] byte[14]=0x11
+- [bonsai] byte[15]=0x00
+- [bonsai] byte[16]=0x0f
+- [bonsai] byte[17]=0xe3
+- [bonsai] byte[18]=0x43
+- [bonsai] byte[19]=0xcc
+- [bonsai] byte[20]=0xc3
+- [bonsai] byte[21]=0xe8
+- [bonsai] byte[22]=0x64
+- [bonsai] byte[23]=0xaa
+- [bonsai] candidate: uint8 (256, 256, 256) (fits 16777216 bytes)
+- [bonsai] candidate: uint16-le (256, 256, 128) (fits 16777216 bytes)
+- [bonsai] bin[0]=960
+- [bonsai] bin[1]=829
+- [bonsai] bin[2]=698
+- [bonsai] bin[3]=567
+- [bonsai] bin[4]=436
+- [bonsai] bin[5]=305
+- [bonsai] bin[6]=174
+- [bonsai] bin[7]=43
+- [bonsai] bin[8]=912
+- [bonsai] bin[9]=781
+- [bonsai] bin[10]=650
+- [bonsai] bin[11]=519
+- [bonsai] bin[12]=388
+- [bonsai] bin[13]=257
+- [bonsai] bin[14]=126
+- [bonsai] bin[15]=995
+- [bonsai] bin[16]=864
+- [bonsai] bin[17]=733
+- [bonsai] bin[18]=602
+- [bonsai] bin[19]=471
+- [bonsai] bin[20]=340
+- [bonsai] bin[21]=209
+- [bonsai] bin[22]=78
+- [bonsai] bin[23]=947
+- [bonsai] bin[24]=816
+- [bonsai] bin[25]=685
+- [bonsai] bin[26]=554
+- [bonsai] bin[27]=423
+- [bonsai] bin[28]=292
+- [bonsai] bin[29]=161
+- [bonsai] bin[30]=30
+- [bonsai] bin[31]=899
+- [engine] byte[0]=0x00
+- [engine] byte[1]=0x00
+- [engine] byte[2]=0xaa
+- [engine] byte[3]=0x00
+- [engine] byte[4]=0x99
+- [engine] byte[5]=0x55
+- [engine] byte[6]=0x24
+- [engine] byte[7]=0x00
+- [engine] byte[8]=0xe3
+- [engine] byte[9]=0xcc
+- [engine] byte[10]=0xe8
+- [engine] byte[11]=0xaa
+- [engine] byte[12]=0x9d
+- [engine] byte[13]=0x92
+- [engine] byte[14]=0x88
+- [engine] byte[15]=0x00
+- [engine] byte[16]=0x87
+- [engine] byte[17]=0x71
+- [engine] byte[18]=0xa1
+- [engine] byte[19]=0x66
+- [engine] byte[20]=0x61
+- [engine] byte[21]=0x74
+- [engine] byte[22]=0xb2
+- [engine] byte[23]=0x55
+- [engine] candidate: uint8 (256, 256, 128) (fits 8388608 bytes)
+- [engine] candidate: uint16-le (256, 256, 64) (fits 8388608 bytes)
+- [engine] bin[0]=480
+- [engine] bin[1]=349
+- [engine] bin[2]=218
+- [engine] bin[3]=87
+- [engine] bin[4]=956
+- [engine] bin[5]=825
+- [engine] bin[6]=694
+- [engine] bin[7]=563
+- [engine] bin[8]=432
+- [engine] bin[9]=301
+- [engine] bin[10]=170
+- [engine] bin[11]=39
+- [engine] bin[12]=908
+- [engine] bin[13]=777
+- [engine] bin[14]=646
+- [engine] bin[15]=515
+- [engine] bin[16]=384
+- [engine] bin[17]=253
+- [engine] bin[18]=122
+- [engine] bin[19]=991
+- [engine] bin[20]=860
+- [engine] bin[21]=729
+- [engine] bin[22]=598
+- [engine] bin[23]=467
+- [engine] bin[24]=336
+- [engine] bin[25]=205
+- [engine] bin[26]=74
+- [engine] bin[27]=943
+- [engine] bin[28]=812
+- [engine] bin[29]=681
+- [engine] bin[30]=550
+- [engine] bin[31]=419
+- [mri_woman] byte[0]=0x00
+- [mri_woman] byte[1]=0x00
+- [mri_woman] byte[2]=0xaa
+- [mri_woman] byte[3]=0x00
+- [mri_woman] byte[4]=0x99
+- [mri_woman] byte[5]=0x55
+- [mri_woman] byte[6]=0x92
+- [mri_woman] byte[7]=0x00
+- [mri_woman] byte[8]=0xe3
+- [mri_woman] byte[9]=0xcc
+- [mri_woman] byte[10]=0x74
+- [mri_woman] byte[11]=0xaa
+- [mri_woman] byte[12]=0xec
+- [mri_woman] byte[13]=0x49
+- [mri_woman] byte[14]=0x88
+- [mri_woman] byte[15]=0x00
+- [mri_woman] byte[16]=0xd2
+- [mri_woman] byte[17]=0x71
+- [mri_woman] byte[18]=0x43
+- [mri_woman] byte[19]=0x66
+- [mri_woman] byte[20]=0x86
+- [mri_woman] byte[21]=0xba
+- [mri_woman] byte[22]=0x6f
+- [mri_woman] byte[23]=0x55
+- [mri_woman] candidate: uint8 (256, 256, 218) (fits 14286848 bytes)
+- [mri_woman] candidate: uint16-le (256, 256, 109) (fits 14286848 bytes)
+- [mri_woman] bin[0]=287
+- [mri_woman] bin[1]=156
+- [mri_woman] bin[2]=25
+- [mri_woman] bin[3]=894
+- [mri_woman] bin[4]=763
+- [mri_woman] bin[5]=632
+- [mri_woman] bin[6]=501
+- [mri_woman] bin[7]=370
+- [mri_woman] bin[8]=239
+- [mri_woman] bin[9]=108
+- [mri_woman] bin[10]=977
+- [mri_woman] bin[11]=846
+- [mri_woman] bin[12]=715
+- [mri_woman] bin[13]=584
+- [mri_woman] bin[14]=453
+- [mri_woman] bin[15]=322
+- [mri_woman] bin[16]=191
+- [mri_woman] bin[17]=60
+- [mri_woman] bin[18]=929
+- [mri_woman] bin[19]=798
+- [mri_woman] bin[20]=667
+- [mri_woman] bin[21]=536
+- [mri_woman] bin[22]=405
+- [mri_woman] bin[23]=274
+- [mri_woman] bin[24]=143
+- [mri_woman] bin[25]=12
+- [mri_woman] bin[26]=881
+- [mri_woman] bin[27]=750
+- [mri_woman] bin[28]=619
+- [mri_woman] bin[29]=488
+- [mri_woman] bin[30]=357
+- [mri_woman] bin[31]=226
+
+## Current TF
+
+## Open issues
+- [bonsai] wrote results/bonsai.py
+- [bonsai] render -> results/bonsai.png
+- [bonsai] LOOK: first pass shell too opaque, lower soft band
+- [bonsai] re-render -> results/bonsai.png
+- [bonsai] LOOK: interior reads clearly — good
+- [engine] wrote results/engine.py
+- [engine] render -> results/engine.png
+- [engine] LOOK: first pass shell too opaque, lower soft band
+- [engine] re-render -> results/engine.png
+- [engine] LOOK: interior reads clearly — good
+- [mri_woman] wrote results/mri_woman.py
+- [mri_woman] render -> results/mri_woman.png
+- [mri_woman] LOOK: first pass shell too opaque, lower soft band
+- [mri_woman] re-render -> results/mri_woman.png
+- [mri_woman] LOOK: interior reads clearly — good
+
+## Discard log

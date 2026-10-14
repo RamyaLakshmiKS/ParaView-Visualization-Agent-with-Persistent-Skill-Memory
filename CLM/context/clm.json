@@ -1,0 +1,35 @@
+{
+  "name": "context-as-a-file (CLM)",
+  "trace": [
+    {
+      "step": 1,
+      "label": "inspect .raw (compressed)",
+      "lines": 4,
+      "chars": 312,
+      "est_tokens": 78
+    },
+    {
+      "step": 2,
+      "label": "histogram (compressed)",
+      "lines": 6,
+      "chars": 418,
+      "est_tokens": 104
+    },
+    {
+      "step": 3,
+      "label": "render #1 + look (rewrite)",
+      "lines": 10,
+      "chars": 654,
+      "est_tokens": 164
+    },
+    {
+      "step": 4,
+      "label": "render #2 + look (resolved)",
+      "lines": 10,
+      "chars": 678,
+      "est_tokens": 170
+    }
+  ],
+  "total_lines_written": 71,
+  "lines_discarded": 62
+}

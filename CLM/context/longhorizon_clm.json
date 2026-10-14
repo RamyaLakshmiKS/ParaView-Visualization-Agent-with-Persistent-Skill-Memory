@@ -1,0 +1,45 @@
+{
+  "name": "long-horizon clm (context-as-a-file)",
+  "trace": [
+    {
+      "step": 1,
+      "label": "after bonsai",
+      "lines": 4,
+      "chars": 328,
+      "est_tokens": 82
+    },
+    {
+      "step": 2,
+      "label": "after engine",
+      "lines": 6,
+      "chars": 447,
+      "est_tokens": 112
+    },
+    {
+      "step": 3,
+      "label": "after mri_woman",
+      "lines": 8,
+      "chars": 580,
+      "est_tokens": 145
+    }
+  ],
+  "total_lines_written": 193,
+  "lines_discarded": 186,
+  "per_file": [
+    {
+      "name": "bonsai",
+      "est_tokens_after": 82,
+      "lines_after": 4
+    },
+    {
+      "name": "engine",
+      "est_tokens_after": 112,
+      "lines_after": 6
+    },
+    {
+      "name": "mri_woman",
+      "est_tokens_after": 145,
+      "lines_after": 8
+    }
+  ]
+}

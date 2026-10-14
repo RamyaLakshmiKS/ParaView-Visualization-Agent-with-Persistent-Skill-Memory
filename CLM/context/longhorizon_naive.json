@@ -1,0 +1,45 @@
+{
+  "name": "long-horizon naive (naive-append)",
+  "trace": [
+    {
+      "step": 1,
+      "label": "after bonsai",
+      "lines": 64,
+      "chars": 1810,
+      "est_tokens": 452
+    },
+    {
+      "step": 2,
+      "label": "after engine",
+      "lines": 127,
+      "chars": 3483,
+      "est_tokens": 871
+    },
+    {
+      "step": 3,
+      "label": "after mri_woman",
+      "lines": 190,
+      "chars": 5357,
+      "est_tokens": 1339
+    }
+  ],
+  "total_lines_written": 190,
+  "lines_discarded": 0,
+  "per_file": [
+    {
+      "name": "bonsai",
+      "est_tokens_after": 452,
+      "lines_after": 64
+    },
+    {
+      "name": "engine",
+      "est_tokens_after": 871,
+      "lines_after": 127
+    },
+    {
+      "name": "mri_woman",
+      "est_tokens_after": 1339,
+      "lines_after": 190
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "name": "naive-append",
+  "trace": [
+    {
+      "step": 1,
+      "label": "inspect .raw",
+      "lines": 31,
+      "chars": 804,
+      "est_tokens": 201
+    },
+    {
+      "step": 2,
+      "label": "histogram",
+      "lines": 63,
+      "chars": 1237,
+      "est_tokens": 309
+    },
+    {
+      "step": 3,
+      "label": "render #1 + look",
+      "lines": 66,
+      "chars": 1380,
+      "est_tokens": 345
+    },
+    {
+      "step": 4,
+      "label": "render #2 + look",
+      "lines": 69,
+      "chars": 1558,
+      "est_tokens": 390
+    }
+  ],
+  "total_lines_written": 69,
+  "lines_discarded": 0
+}
