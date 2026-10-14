@@ -73,12 +73,43 @@ DTYPE_BYTES = {"uint8": 1, "uint16-le": 2, "uint16-be": 2, "float32": 4}
 # ---------------------------------------------------------------------------
 # Real inspection of a .raw file
 # ---------------------------------------------------------------------------
+import re as _re  # noqa: E402
+
+
+def parse_name_layout(name: str, nbytes: int) -> Optional[Tuple[str, Tuple[int, int, int]]]:
+    """Parse (dtype, dims) encoded in a filename, e.g.
+    'backpack_512x512x373_uint16' or 'blunt_fin_256x128x64_uint8'.
+
+    Returns (dtype, (w,h,d)) only if the encoded layout actually matches the file
+    byte count — so a mislabeled name can never silently produce a scrambled
+    interpretation. uint16 defaults to little-endian (the common convention here).
+    """
+    dim_m = _re.search(r"(\d+)x(\d+)x(\d+)", name)
+    if not dim_m:
+        return None
+    w, h, d = (int(dim_m.group(1)), int(dim_m.group(2)), int(dim_m.group(3)))
+
+    low = name.lower()
+    if "uint16" in low or "int16" in low or "u16" in low:
+        dtype = "uint16-be" if ("_be" in low or "bigend" in low) else "uint16-le"
+    elif "float32" in low or "f32" in low:
+        dtype = "float32"
+    else:
+        dtype = "uint8"
+
+    expected = w * h * d * DTYPE_BYTES.get(dtype, 1)
+    if expected != nbytes:
+        return None  # name does not match the bytes; fall back to inference
+    return dtype, (w, h, d)
+
+
 def infer_candidates(nbytes: int) -> List[Tuple[str, Tuple[int, int, int]]]:
     """Infer plausible (dtype, dims) interpretations from a byte count.
 
     We assume the two trailing dims are 256x256 (the convention for these
     volumes) and solve for depth under each dtype. This mirrors the real
-    'resolve headerless by inspection' lesson in memory/memory.json.
+    'resolve headerless by inspection' lesson in memory/memory.json. Used only
+    when the filename does not encode a layout that matches the byte count.
     """
     candidates: List[Tuple[str, Tuple[int, int, int]]] = []
     base = 256 * 256
@@ -130,15 +161,25 @@ def inspect_file(path: str) -> Dict:
     name = os.path.splitext(os.path.basename(path))[0]
     nbytes = os.path.getsize(path)
     candidates = infer_candidates(nbytes)
+    name_layout = parse_name_layout(name, nbytes)
 
-    # choose dtype/dims: prefer a known layout, else the first plausible candidate
+    # choose dtype/dims, in priority order:
+    #   1. a hard-coded known layout (the 3 canonical datasets)
+    #   2. a layout ENCODED IN THE FILENAME that matches the byte count
+    #   3. byte-count inference (assumes 256x256xdepth)
     if name in KNOWN_LAYOUTS:
         dtype = KNOWN_LAYOUTS[name]["dtype"]
         dims = KNOWN_LAYOUTS[name]["dims"]
+        layout_source = "known-layout"
+    elif name_layout is not None:
+        dtype, dims = name_layout
+        layout_source = "filename"
     elif candidates:
         dtype, dims = candidates[0]
+        layout_source = "byte-count-inference"
     else:
         dtype, dims = ("uint8", (0, 0, 0))
+        layout_source = "unresolved"
 
     vmin, vmax = measure_range(path, dtype)
 
@@ -146,9 +187,12 @@ def inspect_file(path: str) -> Dict:
     # a naive agent keeps forever and a CLM compresses to one line.
     raw_header_bytes = [f"byte[{i}]=0x{(nbytes // (i + 1)) % 256:02x}" for i in range(24)]
     candidate_lines = [f"candidate: {dt} {dm} (fits {nbytes} bytes)" for dt, dm in candidates]
+    if name_layout is not None:
+        candidate_lines.append(f"filename encodes: {name_layout[0]} {name_layout[1]} (matches bytes)")
     histogram = [f"bin[{b}]={ (nbytes // 97 - b * 131) % 1000 }" for b in range(32)]
 
-    resolved = f"{name}: {dtype} {dims[0]}x{dims[1]}x{dims[2]}, range [{vmin:g},{vmax:g}]"
+    resolved = (f"{name}: {dtype} {dims[0]}x{dims[1]}x{dims[2]}, "
+                f"range [{vmin:g},{vmax:g}] (via {layout_source})")
     return {
         "name": name,
         "path": path,
@@ -156,6 +200,7 @@ def inspect_file(path: str) -> Dict:
         "dtype": dtype,
         "dims": dims,
         "range": (vmin, vmax),
+        "layout_source": layout_source,
         "raw_header_bytes": raw_header_bytes,
         "candidate_lines": candidate_lines,
         "histogram": histogram,
@@ -166,9 +211,15 @@ def inspect_file(path: str) -> Dict:
 # ---------------------------------------------------------------------------
 # Optional real VTK render (only for files with a known layout)
 # ---------------------------------------------------------------------------
-def try_render(info: Dict) -> Optional[str]:
+def try_render(info: Dict, max_voxels: int = 80_000_000) -> Optional[str]:
     name = info["name"]
-    if name not in KNOWN_LAYOUTS:
+    dims = info["dims"]
+    if info.get("layout_source") in (None, "unresolved") or dims[0] * dims[1] * dims[2] == 0:
+        return None
+    # Guard: offscreen CPU ray-casting a multi-GB volume can exhaust memory.
+    # Skip very large volumes for the render (the CONTEXT experiment does not
+    # need pixels); they are still fully inspected and measured.
+    if dims[0] * dims[1] * dims[2] > max_voxels:
         return None
     try:
         import numpy as np
@@ -178,8 +229,7 @@ def try_render(info: Dict) -> Optional[str]:
         return None
 
     dtype = info["dtype"]
-    dims = info["dims"]
-    np_dtype = {"uint8": "<u1", "uint16-le": "<u2"}.get(dtype, "<u1")
+    np_dtype = {"uint8": "<u1", "uint16-le": "<u2", "uint16-be": ">u2"}.get(dtype, "<u1")
     arr = np.fromfile(info["path"], dtype=np_dtype)
     if arr.size != dims[0] * dims[1] * dims[2]:
         return None

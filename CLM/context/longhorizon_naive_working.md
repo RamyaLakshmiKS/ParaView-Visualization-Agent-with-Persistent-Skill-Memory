@@ -2,6 +2,242 @@
 - long-horizon: render every volume in data/ in one session
 
 ## Resolved facts
+- [aneurism_256x256x256_uint8] byte[0]=0x00
+- [aneurism_256x256x256_uint8] byte[1]=0x00
+- [aneurism_256x256x256_uint8] byte[2]=0x55
+- [aneurism_256x256x256_uint8] byte[3]=0x00
+- [aneurism_256x256x256_uint8] byte[4]=0x33
+- [aneurism_256x256x256_uint8] byte[5]=0xaa
+- [aneurism_256x256x256_uint8] byte[6]=0x49
+- [aneurism_256x256x256_uint8] byte[7]=0x00
+- [aneurism_256x256x256_uint8] byte[8]=0xc7
+- [aneurism_256x256x256_uint8] byte[9]=0x99
+- [aneurism_256x256x256_uint8] byte[10]=0xd1
+- [aneurism_256x256x256_uint8] byte[11]=0x55
+- [aneurism_256x256x256_uint8] byte[12]=0x3b
+- [aneurism_256x256x256_uint8] byte[13]=0x24
+- [aneurism_256x256x256_uint8] byte[14]=0x11
+- [aneurism_256x256x256_uint8] byte[15]=0x00
+- [aneurism_256x256x256_uint8] byte[16]=0x0f
+- [aneurism_256x256x256_uint8] byte[17]=0xe3
+- [aneurism_256x256x256_uint8] byte[18]=0x43
+- [aneurism_256x256x256_uint8] byte[19]=0xcc
+- [aneurism_256x256x256_uint8] byte[20]=0xc3
+- [aneurism_256x256x256_uint8] byte[21]=0xe8
+- [aneurism_256x256x256_uint8] byte[22]=0x64
+- [aneurism_256x256x256_uint8] byte[23]=0xaa
+- [aneurism_256x256x256_uint8] candidate: uint8 (256, 256, 256) (fits 16777216 bytes)
+- [aneurism_256x256x256_uint8] candidate: uint16-le (256, 256, 128) (fits 16777216 bytes)
+- [aneurism_256x256x256_uint8] filename encodes: uint8 (256, 256, 256) (matches bytes)
+- [aneurism_256x256x256_uint8] bin[0]=960
+- [aneurism_256x256x256_uint8] bin[1]=829
+- [aneurism_256x256x256_uint8] bin[2]=698
+- [aneurism_256x256x256_uint8] bin[3]=567
+- [aneurism_256x256x256_uint8] bin[4]=436
+- [aneurism_256x256x256_uint8] bin[5]=305
+- [aneurism_256x256x256_uint8] bin[6]=174
+- [aneurism_256x256x256_uint8] bin[7]=43
+- [aneurism_256x256x256_uint8] bin[8]=912
+- [aneurism_256x256x256_uint8] bin[9]=781
+- [aneurism_256x256x256_uint8] bin[10]=650
+- [aneurism_256x256x256_uint8] bin[11]=519
+- [aneurism_256x256x256_uint8] bin[12]=388
+- [aneurism_256x256x256_uint8] bin[13]=257
+- [aneurism_256x256x256_uint8] bin[14]=126
+- [aneurism_256x256x256_uint8] bin[15]=995
+- [aneurism_256x256x256_uint8] bin[16]=864
+- [aneurism_256x256x256_uint8] bin[17]=733
+- [aneurism_256x256x256_uint8] bin[18]=602
+- [aneurism_256x256x256_uint8] bin[19]=471
+- [aneurism_256x256x256_uint8] bin[20]=340
+- [aneurism_256x256x256_uint8] bin[21]=209
+- [aneurism_256x256x256_uint8] bin[22]=78
+- [aneurism_256x256x256_uint8] bin[23]=947
+- [aneurism_256x256x256_uint8] bin[24]=816
+- [aneurism_256x256x256_uint8] bin[25]=685
+- [aneurism_256x256x256_uint8] bin[26]=554
+- [aneurism_256x256x256_uint8] bin[27]=423
+- [aneurism_256x256x256_uint8] bin[28]=292
+- [aneurism_256x256x256_uint8] bin[29]=161
+- [aneurism_256x256x256_uint8] bin[30]=30
+- [aneurism_256x256x256_uint8] bin[31]=899
+- [backpack_512x512x373_uint16] byte[0]=0x00
+- [backpack_512x512x373_uint16] byte[1]=0x00
+- [backpack_512x512x373_uint16] byte[2]=0xaa
+- [backpack_512x512x373_uint16] byte[3]=0x00
+- [backpack_512x512x373_uint16] byte[4]=0xcc
+- [backpack_512x512x373_uint16] byte[5]=0x55
+- [backpack_512x512x373_uint16] byte[6]=0x24
+- [backpack_512x512x373_uint16] byte[7]=0x00
+- [backpack_512x512x373_uint16] byte[8]=0x38
+- [backpack_512x512x373_uint16] byte[9]=0x66
+- [backpack_512x512x373_uint16] byte[10]=0xd1
+- [backpack_512x512x373_uint16] byte[11]=0xaa
+- [backpack_512x512x373_uint16] byte[12]=0xd8
+- [backpack_512x512x373_uint16] byte[13]=0x92
+- [backpack_512x512x373_uint16] byte[14]=0xee
+- [backpack_512x512x373_uint16] byte[15]=0x00
+- [backpack_512x512x373_uint16] byte[16]=0x87
+- [backpack_512x512x373_uint16] byte[17]=0x1c
+- [backpack_512x512x373_uint16] byte[18]=0x79
+- [backpack_512x512x373_uint16] byte[19]=0x33
+- [backpack_512x512x373_uint16] byte[20]=0x61
+- [backpack_512x512x373_uint16] byte[21]=0xe8
+- [backpack_512x512x373_uint16] byte[22]=0x37
+- [backpack_512x512x373_uint16] byte[23]=0x55
+- [backpack_512x512x373_uint16] candidate: uint8 (256, 256, 2984) (fits 195559424 bytes)
+- [backpack_512x512x373_uint16] candidate: uint16-le (256, 256, 1492) (fits 195559424 bytes)
+- [backpack_512x512x373_uint16] filename encodes: uint16-le (512, 512, 373) (matches bytes)
+- [backpack_512x512x373_uint16] bin[0]=76
+- [backpack_512x512x373_uint16] bin[1]=945
+- [backpack_512x512x373_uint16] bin[2]=814
+- [backpack_512x512x373_uint16] bin[3]=683
+- [backpack_512x512x373_uint16] bin[4]=552
+- [backpack_512x512x373_uint16] bin[5]=421
+- [backpack_512x512x373_uint16] bin[6]=290
+- [backpack_512x512x373_uint16] bin[7]=159
+- [backpack_512x512x373_uint16] bin[8]=28
+- [backpack_512x512x373_uint16] bin[9]=897
+- [backpack_512x512x373_uint16] bin[10]=766
+- [backpack_512x512x373_uint16] bin[11]=635
+- [backpack_512x512x373_uint16] bin[12]=504
+- [backpack_512x512x373_uint16] bin[13]=373
+- [backpack_512x512x373_uint16] bin[14]=242
+- [backpack_512x512x373_uint16] bin[15]=111
+- [backpack_512x512x373_uint16] bin[16]=980
+- [backpack_512x512x373_uint16] bin[17]=849
+- [backpack_512x512x373_uint16] bin[18]=718
+- [backpack_512x512x373_uint16] bin[19]=587
+- [backpack_512x512x373_uint16] bin[20]=456
+- [backpack_512x512x373_uint16] bin[21]=325
+- [backpack_512x512x373_uint16] bin[22]=194
+- [backpack_512x512x373_uint16] bin[23]=63
+- [backpack_512x512x373_uint16] bin[24]=932
+- [backpack_512x512x373_uint16] bin[25]=801
+- [backpack_512x512x373_uint16] bin[26]=670
+- [backpack_512x512x373_uint16] bin[27]=539
+- [backpack_512x512x373_uint16] bin[28]=408
+- [backpack_512x512x373_uint16] bin[29]=277
+- [backpack_512x512x373_uint16] bin[30]=146
+- [backpack_512x512x373_uint16] bin[31]=15
+- [beechnut_1024x1024x1546_uint16] byte[0]=0x00
+- [beechnut_1024x1024x1546_uint16] byte[1]=0x00
+- [beechnut_1024x1024x1546_uint16] byte[2]=0xaa
+- [beechnut_1024x1024x1546_uint16] byte[3]=0x00
+- [beechnut_1024x1024x1546_uint16] byte[4]=0x66
+- [beechnut_1024x1024x1546_uint16] byte[5]=0x55
+- [beechnut_1024x1024x1546_uint16] byte[6]=0xb6
+- [beechnut_1024x1024x1546_uint16] byte[7]=0x00
+- [beechnut_1024x1024x1546_uint16] byte[8]=0x8e
+- [beechnut_1024x1024x1546_uint16] byte[9]=0x33
+- [beechnut_1024x1024x1546_uint16] byte[10]=0x5d
+- [beechnut_1024x1024x1546_uint16] byte[11]=0xaa
+- [beechnut_1024x1024x1546_uint16] byte[12]=0xd8
+- [beechnut_1024x1024x1546_uint16] byte[13]=0xdb
+- [beechnut_1024x1024x1546_uint16] byte[14]=0x22
+- [beechnut_1024x1024x1546_uint16] byte[15]=0x00
+- [beechnut_1024x1024x1546_uint16] byte[16]=0x1e
+- [beechnut_1024x1024x1546_uint16] byte[17]=0xc7
+- [beechnut_1024x1024x1546_uint16] byte[18]=0x1a
+- [beechnut_1024x1024x1546_uint16] byte[19]=0x99
+- [beechnut_1024x1024x1546_uint16] byte[20]=0x3c
+- [beechnut_1024x1024x1546_uint16] byte[21]=0x2e
+- [beechnut_1024x1024x1546_uint16] byte[22]=0xde
+- [beechnut_1024x1024x1546_uint16] byte[23]=0x55
+- [beechnut_1024x1024x1546_uint16] candidate: uint8 (256, 256, 49472) (fits 3242196992 bytes)
+- [beechnut_1024x1024x1546_uint16] candidate: uint16-le (256, 256, 24736) (fits 3242196992 bytes)
+- [beechnut_1024x1024x1546_uint16] filename encodes: uint16-le (1024, 1024, 1546) (matches bytes)
+- [beechnut_1024x1024x1546_uint16] bin[0]=711
+- [beechnut_1024x1024x1546_uint16] bin[1]=580
+- [beechnut_1024x1024x1546_uint16] bin[2]=449
+- [beechnut_1024x1024x1546_uint16] bin[3]=318
+- [beechnut_1024x1024x1546_uint16] bin[4]=187
+- [beechnut_1024x1024x1546_uint16] bin[5]=56
+- [beechnut_1024x1024x1546_uint16] bin[6]=925
+- [beechnut_1024x1024x1546_uint16] bin[7]=794
+- [beechnut_1024x1024x1546_uint16] bin[8]=663
+- [beechnut_1024x1024x1546_uint16] bin[9]=532
+- [beechnut_1024x1024x1546_uint16] bin[10]=401
+- [beechnut_1024x1024x1546_uint16] bin[11]=270
+- [beechnut_1024x1024x1546_uint16] bin[12]=139
+- [beechnut_1024x1024x1546_uint16] bin[13]=8
+- [beechnut_1024x1024x1546_uint16] bin[14]=877
+- [beechnut_1024x1024x1546_uint16] bin[15]=746
+- [beechnut_1024x1024x1546_uint16] bin[16]=615
+- [beechnut_1024x1024x1546_uint16] bin[17]=484
+- [beechnut_1024x1024x1546_uint16] bin[18]=353
+- [beechnut_1024x1024x1546_uint16] bin[19]=222
+- [beechnut_1024x1024x1546_uint16] bin[20]=91
+- [beechnut_1024x1024x1546_uint16] bin[21]=960
+- [beechnut_1024x1024x1546_uint16] bin[22]=829
+- [beechnut_1024x1024x1546_uint16] bin[23]=698
+- [beechnut_1024x1024x1546_uint16] bin[24]=567
+- [beechnut_1024x1024x1546_uint16] bin[25]=436
+- [beechnut_1024x1024x1546_uint16] bin[26]=305
+- [beechnut_1024x1024x1546_uint16] bin[27]=174
+- [beechnut_1024x1024x1546_uint16] bin[28]=43
+- [beechnut_1024x1024x1546_uint16] bin[29]=912
+- [beechnut_1024x1024x1546_uint16] bin[30]=781
+- [beechnut_1024x1024x1546_uint16] bin[31]=650
+- [blunt_fin_256x128x64_uint8] byte[0]=0x00
+- [blunt_fin_256x128x64_uint8] byte[1]=0x00
+- [blunt_fin_256x128x64_uint8] byte[2]=0xaa
+- [blunt_fin_256x128x64_uint8] byte[3]=0x00
+- [blunt_fin_256x128x64_uint8] byte[4]=0x66
+- [blunt_fin_256x128x64_uint8] byte[5]=0x55
+- [blunt_fin_256x128x64_uint8] byte[6]=0x49
+- [blunt_fin_256x128x64_uint8] byte[7]=0x00
+- [blunt_fin_256x128x64_uint8] byte[8]=0x38
+- [blunt_fin_256x128x64_uint8] byte[9]=0x33
+- [blunt_fin_256x128x64_uint8] byte[10]=0xba
+- [blunt_fin_256x128x64_uint8] byte[11]=0xaa
+- [blunt_fin_256x128x64_uint8] byte[12]=0x27
+- [blunt_fin_256x128x64_uint8] byte[13]=0x24
+- [blunt_fin_256x128x64_uint8] byte[14]=0x22
+- [blunt_fin_256x128x64_uint8] byte[15]=0x00
+- [blunt_fin_256x128x64_uint8] byte[16]=0xe1
+- [blunt_fin_256x128x64_uint8] byte[17]=0x1c
+- [blunt_fin_256x128x64_uint8] byte[18]=0x28
+- [blunt_fin_256x128x64_uint8] byte[19]=0x99
+- [blunt_fin_256x128x64_uint8] byte[20]=0x18
+- [blunt_fin_256x128x64_uint8] byte[21]=0x5d
+- [blunt_fin_256x128x64_uint8] byte[22]=0x2c
+- [blunt_fin_256x128x64_uint8] byte[23]=0x55
+- [blunt_fin_256x128x64_uint8] candidate: uint8 (256, 256, 32) (fits 2097152 bytes)
+- [blunt_fin_256x128x64_uint8] candidate: uint16-le (256, 256, 16) (fits 2097152 bytes)
+- [blunt_fin_256x128x64_uint8] filename encodes: uint8 (256, 128, 64) (matches bytes)
+- [blunt_fin_256x128x64_uint8] bin[0]=620
+- [blunt_fin_256x128x64_uint8] bin[1]=489
+- [blunt_fin_256x128x64_uint8] bin[2]=358
+- [blunt_fin_256x128x64_uint8] bin[3]=227
+- [blunt_fin_256x128x64_uint8] bin[4]=96
+- [blunt_fin_256x128x64_uint8] bin[5]=965
+- [blunt_fin_256x128x64_uint8] bin[6]=834
+- [blunt_fin_256x128x64_uint8] bin[7]=703
+- [blunt_fin_256x128x64_uint8] bin[8]=572
+- [blunt_fin_256x128x64_uint8] bin[9]=441
+- [blunt_fin_256x128x64_uint8] bin[10]=310
+- [blunt_fin_256x128x64_uint8] bin[11]=179
+- [blunt_fin_256x128x64_uint8] bin[12]=48
+- [blunt_fin_256x128x64_uint8] bin[13]=917
+- [blunt_fin_256x128x64_uint8] bin[14]=786
+- [blunt_fin_256x128x64_uint8] bin[15]=655
+- [blunt_fin_256x128x64_uint8] bin[16]=524
+- [blunt_fin_256x128x64_uint8] bin[17]=393
+- [blunt_fin_256x128x64_uint8] bin[18]=262
+- [blunt_fin_256x128x64_uint8] bin[19]=131
+- [blunt_fin_256x128x64_uint8] bin[20]=0
+- [blunt_fin_256x128x64_uint8] bin[21]=869
+- [blunt_fin_256x128x64_uint8] bin[22]=738
+- [blunt_fin_256x128x64_uint8] bin[23]=607
+- [blunt_fin_256x128x64_uint8] bin[24]=476
+- [blunt_fin_256x128x64_uint8] bin[25]=345
+- [blunt_fin_256x128x64_uint8] bin[26]=214
+- [blunt_fin_256x128x64_uint8] bin[27]=83
+- [blunt_fin_256x128x64_uint8] bin[28]=952
+- [blunt_fin_256x128x64_uint8] bin[29]=821
+- [blunt_fin_256x128x64_uint8] bin[30]=690
+- [blunt_fin_256x128x64_uint8] bin[31]=559
 - [bonsai] byte[0]=0x00
 - [bonsai] byte[1]=0x00
 - [bonsai] byte[2]=0x55
@@ -60,6 +296,181 @@
 - [bonsai] bin[29]=161
 - [bonsai] bin[30]=30
 - [bonsai] bin[31]=899
+- [boston_teapot_256x256x178_uint8] byte[0]=0x00
+- [boston_teapot_256x256x178_uint8] byte[1]=0x00
+- [boston_teapot_256x256x178_uint8] byte[2]=0x55
+- [boston_teapot_256x256x178_uint8] byte[3]=0x00
+- [boston_teapot_256x256x178_uint8] byte[4]=0x99
+- [boston_teapot_256x256x178_uint8] byte[5]=0xaa
+- [boston_teapot_256x256x178_uint8] byte[6]=0xb6
+- [boston_teapot_256x256x178_uint8] byte[7]=0x00
+- [boston_teapot_256x256x178_uint8] byte[8]=0x1c
+- [boston_teapot_256x256x178_uint8] byte[9]=0xcc
+- [boston_teapot_256x256x178_uint8] byte[10]=0x8b
+- [boston_teapot_256x256x178_uint8] byte[11]=0x55
+- [boston_teapot_256x256x178_uint8] byte[12]=0x3b
+- [boston_teapot_256x256x178_uint8] byte[13]=0xdb
+- [boston_teapot_256x256x178_uint8] byte[14]=0xdd
+- [boston_teapot_256x256x178_uint8] byte[15]=0x00
+- [boston_teapot_256x256x178_uint8] byte[16]=0x78
+- [boston_teapot_256x256x178_uint8] byte[17]=0x8e
+- [boston_teapot_256x256x178_uint8] byte[18]=0x50
+- [boston_teapot_256x256x178_uint8] byte[19]=0x66
+- [boston_teapot_256x256x178_uint8] byte[20]=0xe7
+- [boston_teapot_256x256x178_uint8] byte[21]=0x45
+- [boston_teapot_256x256x178_uint8] byte[22]=0x37
+- [boston_teapot_256x256x178_uint8] byte[23]=0xaa
+- [boston_teapot_256x256x178_uint8] candidate: uint8 (256, 256, 178) (fits 11665408 bytes)
+- [boston_teapot_256x256x178_uint8] candidate: uint16-le (256, 256, 89) (fits 11665408 bytes)
+- [boston_teapot_256x256x178_uint8] filename encodes: uint8 (256, 256, 178) (matches bytes)
+- [boston_teapot_256x256x178_uint8] bin[0]=261
+- [boston_teapot_256x256x178_uint8] bin[1]=130
+- [boston_teapot_256x256x178_uint8] bin[2]=999
+- [boston_teapot_256x256x178_uint8] bin[3]=868
+- [boston_teapot_256x256x178_uint8] bin[4]=737
+- [boston_teapot_256x256x178_uint8] bin[5]=606
+- [boston_teapot_256x256x178_uint8] bin[6]=475
+- [boston_teapot_256x256x178_uint8] bin[7]=344
+- [boston_teapot_256x256x178_uint8] bin[8]=213
+- [boston_teapot_256x256x178_uint8] bin[9]=82
+- [boston_teapot_256x256x178_uint8] bin[10]=951
+- [boston_teapot_256x256x178_uint8] bin[11]=820
+- [boston_teapot_256x256x178_uint8] bin[12]=689
+- [boston_teapot_256x256x178_uint8] bin[13]=558
+- [boston_teapot_256x256x178_uint8] bin[14]=427
+- [boston_teapot_256x256x178_uint8] bin[15]=296
+- [boston_teapot_256x256x178_uint8] bin[16]=165
+- [boston_teapot_256x256x178_uint8] bin[17]=34
+- [boston_teapot_256x256x178_uint8] bin[18]=903
+- [boston_teapot_256x256x178_uint8] bin[19]=772
+- [boston_teapot_256x256x178_uint8] bin[20]=641
+- [boston_teapot_256x256x178_uint8] bin[21]=510
+- [boston_teapot_256x256x178_uint8] bin[22]=379
+- [boston_teapot_256x256x178_uint8] bin[23]=248
+- [boston_teapot_256x256x178_uint8] bin[24]=117
+- [boston_teapot_256x256x178_uint8] bin[25]=986
+- [boston_teapot_256x256x178_uint8] bin[26]=855
+- [boston_teapot_256x256x178_uint8] bin[27]=724
+- [boston_teapot_256x256x178_uint8] bin[28]=593
+- [boston_teapot_256x256x178_uint8] bin[29]=462
+- [boston_teapot_256x256x178_uint8] bin[30]=331
+- [boston_teapot_256x256x178_uint8] bin[31]=200
+- [bunny_512x512x361_uint16] byte[0]=0x00
+- [bunny_512x512x361_uint16] byte[1]=0x00
+- [bunny_512x512x361_uint16] byte[2]=0xaa
+- [bunny_512x512x361_uint16] byte[3]=0x00
+- [bunny_512x512x361_uint16] byte[4]=0x99
+- [bunny_512x512x361_uint16] byte[5]=0x55
+- [bunny_512x512x361_uint16] byte[6]=0x49
+- [bunny_512x512x361_uint16] byte[7]=0x00
+- [bunny_512x512x361_uint16] byte[8]=0x8e
+- [bunny_512x512x361_uint16] byte[9]=0xcc
+- [bunny_512x512x361_uint16] byte[10]=0xa2
+- [bunny_512x512x361_uint16] byte[11]=0xaa
+- [bunny_512x512x361_uint16] byte[12]=0x62
+- [bunny_512x512x361_uint16] byte[13]=0x24
+- [bunny_512x512x361_uint16] byte[14]=0x88
+- [bunny_512x512x361_uint16] byte[15]=0x00
+- [bunny_512x512x361_uint16] byte[16]=0xe1
+- [bunny_512x512x361_uint16] byte[17]=0xc7
+- [bunny_512x512x361_uint16] byte[18]=0x00
+- [bunny_512x512x361_uint16] byte[19]=0x66
+- [bunny_512x512x361_uint16] byte[20]=0x18
+- [bunny_512x512x361_uint16] byte[21]=0xd1
+- [bunny_512x512x361_uint16] byte[22]=0xb2
+- [bunny_512x512x361_uint16] byte[23]=0x55
+- [bunny_512x512x361_uint16] candidate: uint8 (256, 256, 2888) (fits 189267968 bytes)
+- [bunny_512x512x361_uint16] candidate: uint16-le (256, 256, 1444) (fits 189267968 bytes)
+- [bunny_512x512x361_uint16] filename encodes: uint16-le (512, 512, 361) (matches bytes)
+- [bunny_512x512x361_uint16] bin[0]=216
+- [bunny_512x512x361_uint16] bin[1]=85
+- [bunny_512x512x361_uint16] bin[2]=954
+- [bunny_512x512x361_uint16] bin[3]=823
+- [bunny_512x512x361_uint16] bin[4]=692
+- [bunny_512x512x361_uint16] bin[5]=561
+- [bunny_512x512x361_uint16] bin[6]=430
+- [bunny_512x512x361_uint16] bin[7]=299
+- [bunny_512x512x361_uint16] bin[8]=168
+- [bunny_512x512x361_uint16] bin[9]=37
+- [bunny_512x512x361_uint16] bin[10]=906
+- [bunny_512x512x361_uint16] bin[11]=775
+- [bunny_512x512x361_uint16] bin[12]=644
+- [bunny_512x512x361_uint16] bin[13]=513
+- [bunny_512x512x361_uint16] bin[14]=382
+- [bunny_512x512x361_uint16] bin[15]=251
+- [bunny_512x512x361_uint16] bin[16]=120
+- [bunny_512x512x361_uint16] bin[17]=989
+- [bunny_512x512x361_uint16] bin[18]=858
+- [bunny_512x512x361_uint16] bin[19]=727
+- [bunny_512x512x361_uint16] bin[20]=596
+- [bunny_512x512x361_uint16] bin[21]=465
+- [bunny_512x512x361_uint16] bin[22]=334
+- [bunny_512x512x361_uint16] bin[23]=203
+- [bunny_512x512x361_uint16] bin[24]=72
+- [bunny_512x512x361_uint16] bin[25]=941
+- [bunny_512x512x361_uint16] bin[26]=810
+- [bunny_512x512x361_uint16] bin[27]=679
+- [bunny_512x512x361_uint16] bin[28]=548
+- [bunny_512x512x361_uint16] bin[29]=417
+- [bunny_512x512x361_uint16] bin[30]=286
+- [bunny_512x512x361_uint16] bin[31]=155
+- [csafe_heptane_302x302x302_uint8] byte[0]=0x38
+- [csafe_heptane_302x302x302_uint8] byte[1]=0x1c
+- [csafe_heptane_302x302x302_uint8] byte[2]=0x12
+- [csafe_heptane_302x302x302_uint8] byte[3]=0x0e
+- [csafe_heptane_302x302x302_uint8] byte[4]=0x71
+- [csafe_heptane_302x302x302_uint8] byte[5]=0x09
+- [csafe_heptane_302x302x302_uint8] byte[6]=0x51
+- [csafe_heptane_302x302x302_uint8] byte[7]=0x07
+- [csafe_heptane_302x302x302_uint8] byte[8]=0xb0
+- [csafe_heptane_302x302x302_uint8] byte[9]=0x38
+- [csafe_heptane_302x302x302_uint8] byte[10]=0x1c
+- [csafe_heptane_302x302x302_uint8] byte[11]=0x04
+- [csafe_heptane_302x302x302_uint8] byte[12]=0x53
+- [csafe_heptane_302x302x302_uint8] byte[13]=0x28
+- [csafe_heptane_302x302x302_uint8] byte[14]=0xd0
+- [csafe_heptane_302x302x302_uint8] byte[15]=0x83
+- [csafe_heptane_302x302x302_uint8] byte[16]=0xf4
+- [csafe_heptane_302x302x302_uint8] byte[17]=0x58
+- [csafe_heptane_302x302x302_uint8] byte[18]=0xbf
+- [csafe_heptane_302x302x302_uint8] byte[19]=0x9c
+- [csafe_heptane_302x302x302_uint8] byte[20]=0x70
+- [csafe_heptane_302x302x302_uint8] byte[21]=0x8e
+- [csafe_heptane_302x302x302_uint8] byte[22]=0xec
+- [csafe_heptane_302x302x302_uint8] byte[23]=0x02
+- [csafe_heptane_302x302x302_uint8] filename encodes: uint8 (302, 302, 302) (matches bytes)
+- [csafe_heptane_302x302x302_uint8] bin[0]=954
+- [csafe_heptane_302x302x302_uint8] bin[1]=823
+- [csafe_heptane_302x302x302_uint8] bin[2]=692
+- [csafe_heptane_302x302x302_uint8] bin[3]=561
+- [csafe_heptane_302x302x302_uint8] bin[4]=430
+- [csafe_heptane_302x302x302_uint8] bin[5]=299
+- [csafe_heptane_302x302x302_uint8] bin[6]=168
+- [csafe_heptane_302x302x302_uint8] bin[7]=37
+- [csafe_heptane_302x302x302_uint8] bin[8]=906
+- [csafe_heptane_302x302x302_uint8] bin[9]=775
+- [csafe_heptane_302x302x302_uint8] bin[10]=644
+- [csafe_heptane_302x302x302_uint8] bin[11]=513
+- [csafe_heptane_302x302x302_uint8] bin[12]=382
+- [csafe_heptane_302x302x302_uint8] bin[13]=251
+- [csafe_heptane_302x302x302_uint8] bin[14]=120
+- [csafe_heptane_302x302x302_uint8] bin[15]=989
+- [csafe_heptane_302x302x302_uint8] bin[16]=858
+- [csafe_heptane_302x302x302_uint8] bin[17]=727
+- [csafe_heptane_302x302x302_uint8] bin[18]=596
+- [csafe_heptane_302x302x302_uint8] bin[19]=465
+- [csafe_heptane_302x302x302_uint8] bin[20]=334
+- [csafe_heptane_302x302x302_uint8] bin[21]=203
+- [csafe_heptane_302x302x302_uint8] bin[22]=72
+- [csafe_heptane_302x302x302_uint8] bin[23]=941
+- [csafe_heptane_302x302x302_uint8] bin[24]=810
+- [csafe_heptane_302x302x302_uint8] bin[25]=679
+- [csafe_heptane_302x302x302_uint8] bin[26]=548
+- [csafe_heptane_302x302x302_uint8] bin[27]=417
+- [csafe_heptane_302x302x302_uint8] bin[28]=286
+- [csafe_heptane_302x302x302_uint8] bin[29]=155
+- [csafe_heptane_302x302x302_uint8] bin[30]=24
+- [csafe_heptane_302x302x302_uint8] bin[31]=893
 - [engine] byte[0]=0x00
 - [engine] byte[1]=0x00
 - [engine] byte[2]=0xaa
@@ -176,15 +587,107 @@
 - [mri_woman] bin[29]=488
 - [mri_woman] bin[30]=357
 - [mri_woman] bin[31]=226
+- [zeiss_680x680x680_uint8] byte[0]=0x00
+- [zeiss_680x680x680_uint8] byte[1]=0x00
+- [zeiss_680x680x680_uint8] byte[2]=0xaa
+- [zeiss_680x680x680_uint8] byte[3]=0x80
+- [zeiss_680x680x680_uint8] byte[4]=0x00
+- [zeiss_680x680x680_uint8] byte[5]=0x55
+- [zeiss_680x680x680_uint8] byte[6]=0x49
+- [zeiss_680x680x680_uint8] byte[7]=0x40
+- [zeiss_680x680x680_uint8] byte[8]=0x38
+- [zeiss_680x680x680_uint8] byte[9]=0x00
+- [zeiss_680x680x680_uint8] byte[10]=0x17
+- [zeiss_680x680x680_uint8] byte[11]=0x2a
+- [zeiss_680x680x680_uint8] byte[12]=0xc4
+- [zeiss_680x680x680_uint8] byte[13]=0x24
+- [zeiss_680x680x680_uint8] byte[14]=0x55
+- [zeiss_680x680x680_uint8] byte[15]=0xa0
+- [zeiss_680x680x680_uint8] byte[16]=0x00
+- [zeiss_680x680x680_uint8] byte[17]=0x1c
+- [zeiss_680x680x680_uint8] byte[18]=0xbc
+- [zeiss_680x680x680_uint8] byte[19]=0x80
+- [zeiss_680x680x680_uint8] byte[20]=0x18
+- [zeiss_680x680x680_uint8] byte[21]=0x8b
+- [zeiss_680x680x680_uint8] byte[22]=0x2c
+- [zeiss_680x680x680_uint8] byte[23]=0x15
+- [zeiss_680x680x680_uint8] filename encodes: uint8 (680, 680, 680) (matches bytes)
+- [zeiss_680x680x680_uint8] bin[0]=567
+- [zeiss_680x680x680_uint8] bin[1]=436
+- [zeiss_680x680x680_uint8] bin[2]=305
+- [zeiss_680x680x680_uint8] bin[3]=174
+- [zeiss_680x680x680_uint8] bin[4]=43
+- [zeiss_680x680x680_uint8] bin[5]=912
+- [zeiss_680x680x680_uint8] bin[6]=781
+- [zeiss_680x680x680_uint8] bin[7]=650
+- [zeiss_680x680x680_uint8] bin[8]=519
+- [zeiss_680x680x680_uint8] bin[9]=388
+- [zeiss_680x680x680_uint8] bin[10]=257
+- [zeiss_680x680x680_uint8] bin[11]=126
+- [zeiss_680x680x680_uint8] bin[12]=995
+- [zeiss_680x680x680_uint8] bin[13]=864
+- [zeiss_680x680x680_uint8] bin[14]=733
+- [zeiss_680x680x680_uint8] bin[15]=602
+- [zeiss_680x680x680_uint8] bin[16]=471
+- [zeiss_680x680x680_uint8] bin[17]=340
+- [zeiss_680x680x680_uint8] bin[18]=209
+- [zeiss_680x680x680_uint8] bin[19]=78
+- [zeiss_680x680x680_uint8] bin[20]=947
+- [zeiss_680x680x680_uint8] bin[21]=816
+- [zeiss_680x680x680_uint8] bin[22]=685
+- [zeiss_680x680x680_uint8] bin[23]=554
+- [zeiss_680x680x680_uint8] bin[24]=423
+- [zeiss_680x680x680_uint8] bin[25]=292
+- [zeiss_680x680x680_uint8] bin[26]=161
+- [zeiss_680x680x680_uint8] bin[27]=30
+- [zeiss_680x680x680_uint8] bin[28]=899
+- [zeiss_680x680x680_uint8] bin[29]=768
+- [zeiss_680x680x680_uint8] bin[30]=637
+- [zeiss_680x680x680_uint8] bin[31]=506
 
 ## Current TF
 
 ## Open issues
+- [aneurism_256x256x256_uint8] wrote results/aneurism_256x256x256_uint8.py
+- [aneurism_256x256x256_uint8] render -> results/aneurism_256x256x256_uint8.png
+- [aneurism_256x256x256_uint8] LOOK: first pass shell too opaque, lower soft band
+- [aneurism_256x256x256_uint8] re-render -> results/aneurism_256x256x256_uint8.png
+- [aneurism_256x256x256_uint8] LOOK: interior reads clearly — good
+- [backpack_512x512x373_uint16] wrote results/backpack_512x512x373_uint16.py
+- [backpack_512x512x373_uint16] render -> results/backpack_512x512x373_uint16.png
+- [backpack_512x512x373_uint16] LOOK: first pass shell too opaque, lower soft band
+- [backpack_512x512x373_uint16] re-render -> results/backpack_512x512x373_uint16.png
+- [backpack_512x512x373_uint16] LOOK: interior reads clearly — good
+- [beechnut_1024x1024x1546_uint16] wrote results/beechnut_1024x1024x1546_uint16.py
+- [beechnut_1024x1024x1546_uint16] render -> results/beechnut_1024x1024x1546_uint16.png
+- [beechnut_1024x1024x1546_uint16] LOOK: first pass shell too opaque, lower soft band
+- [beechnut_1024x1024x1546_uint16] re-render -> results/beechnut_1024x1024x1546_uint16.png
+- [beechnut_1024x1024x1546_uint16] LOOK: interior reads clearly — good
+- [blunt_fin_256x128x64_uint8] wrote results/blunt_fin_256x128x64_uint8.py
+- [blunt_fin_256x128x64_uint8] render -> results/blunt_fin_256x128x64_uint8.png
+- [blunt_fin_256x128x64_uint8] LOOK: first pass shell too opaque, lower soft band
+- [blunt_fin_256x128x64_uint8] re-render -> results/blunt_fin_256x128x64_uint8.png
+- [blunt_fin_256x128x64_uint8] LOOK: interior reads clearly — good
 - [bonsai] wrote results/bonsai.py
 - [bonsai] render -> results/bonsai.png
 - [bonsai] LOOK: first pass shell too opaque, lower soft band
 - [bonsai] re-render -> results/bonsai.png
 - [bonsai] LOOK: interior reads clearly — good
+- [boston_teapot_256x256x178_uint8] wrote results/boston_teapot_256x256x178_uint8.py
+- [boston_teapot_256x256x178_uint8] render -> results/boston_teapot_256x256x178_uint8.png
+- [boston_teapot_256x256x178_uint8] LOOK: first pass shell too opaque, lower soft band
+- [boston_teapot_256x256x178_uint8] re-render -> results/boston_teapot_256x256x178_uint8.png
+- [boston_teapot_256x256x178_uint8] LOOK: interior reads clearly — good
+- [bunny_512x512x361_uint16] wrote results/bunny_512x512x361_uint16.py
+- [bunny_512x512x361_uint16] render -> results/bunny_512x512x361_uint16.png
+- [bunny_512x512x361_uint16] LOOK: first pass shell too opaque, lower soft band
+- [bunny_512x512x361_uint16] re-render -> results/bunny_512x512x361_uint16.png
+- [bunny_512x512x361_uint16] LOOK: interior reads clearly — good
+- [csafe_heptane_302x302x302_uint8] wrote results/csafe_heptane_302x302x302_uint8.py
+- [csafe_heptane_302x302x302_uint8] render -> results/csafe_heptane_302x302x302_uint8.png
+- [csafe_heptane_302x302x302_uint8] LOOK: first pass shell too opaque, lower soft band
+- [csafe_heptane_302x302x302_uint8] re-render -> results/csafe_heptane_302x302x302_uint8.png
+- [csafe_heptane_302x302x302_uint8] LOOK: interior reads clearly — good
 - [engine] wrote results/engine.py
 - [engine] render -> results/engine.png
 - [engine] LOOK: first pass shell too opaque, lower soft band
@@ -195,5 +698,10 @@
 - [mri_woman] LOOK: first pass shell too opaque, lower soft band
 - [mri_woman] re-render -> results/mri_woman.png
 - [mri_woman] LOOK: interior reads clearly — good
+- [zeiss_680x680x680_uint8] wrote results/zeiss_680x680x680_uint8.py
+- [zeiss_680x680x680_uint8] render -> results/zeiss_680x680x680_uint8.png
+- [zeiss_680x680x680_uint8] LOOK: first pass shell too opaque, lower soft band
+- [zeiss_680x680x680_uint8] re-render -> results/zeiss_680x680x680_uint8.png
+- [zeiss_680x680x680_uint8] LOOK: interior reads clearly — good
 
 ## Discard log

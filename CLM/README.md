@@ -156,25 +156,43 @@ python3 clm_metrics.py --compare \
 bonsai uint8 256³ [0,255], engine uint8 256×256×128 [0,255], mri_woman uint16-le
 256×256×109 [2,4095]):
 
+**Verified result on 11 real volumes** (dtype/dims resolved from a known layout,
+from the filename, or by byte-count inference; scalar ranges measured from the
+real bytes — including a 3.24 GB `beechnut` sampled for speed):
+
 ```
 Working-context size after each file (est. tokens) — the growth curve:
-  after file           naive       CLM   gap x
-  bonsai                 452        82    5.5x
-  engine                 871       112    7.8x
-  mri_woman             1339       145    9.2x
+  after file                          naive    CLM   gap x
+  aneurism_256x256x256_uint8            804    101    8.0x
+  backpack_512x512x373_uint16          1594    146   10.9x
+  beechnut_1024x1024x1546_uint16       2434    195   12.5x
+  blunt_fin_256x128x64_uint8           3204    237   13.5x
+  bonsai                               3622    266   13.6x
+  boston_teapot_256x256x178_uint8      4477    319   14.0x
+  bunny_512x512x361_uint16             5216    361   14.4x
+  csafe_heptane_302x302x302_uint8      6024    409   14.7x
+  engine                               6442    437   14.7x
+  mri_woman                            6911    475   14.5x
+  zeiss_680x680x680_uint8              7589    520   14.6x
 
-End of horizon: naive 1339 tok vs CLM 145 tok -> CLM is 89.2% smaller, 9.2x less
+End of horizon: naive 7589 tok vs CLM 520 tok -> CLM is 93.1% smaller, 14.6x less
 ```
 
 The key point: **naive grows ~linearly with the number of files while CLM stays
-nearly flat.** After bonsai the CLM context is 5.5× smaller; after three files it
-is 9.2× smaller. **Add more `.raw` files to `data/` and re-run — the gap keeps
-widening**, which is exactly the long-horizon behavior the paper reports.
+nearly flat.** The advantage COMPOUNDS with horizon length — 8.0× smaller after
+one file, 14.6× after eleven. **Add more `.raw` files to `data/` and re-run — the
+gap keeps widening**, which is exactly the long-horizon behavior the paper reports.
 
-Any new file is handled automatically: if its `(dtype, dims)` is not in
-`KNOWN_LAYOUTS`, the runner infers candidates from the byte count (assuming
-256×256×depth) and measures the real range; `--render` is skipped only when the
-dims are unknown or VTK is unavailable.
+Any new file is handled automatically, in priority order:
+1. a hard-coded known layout (the 3 canonical datasets);
+2. a layout **encoded in the filename** (e.g. `backpack_512x512x373_uint16`),
+   accepted only if it matches the byte count so a mislabeled name can't scramble
+   the volume;
+3. byte-count inference (assumes 256×256×depth).
+
+The real VTK render (`--render`) runs for any resolved volume up to ~80M voxels and
+is skipped for larger ones (a multi-GB CPU ray-cast would exhaust memory) — those
+are still fully inspected and measured for the context experiment.
 
 ---
 

@@ -222,3 +222,11 @@ __marimo__/
 # macOS
 .DS_Store
 **/.DS_Store
+
+# --- CLM experiment: large raw volumes (do not commit multi-GB binaries) ---
+# Ignore all raw volumes by default...
+data/*.raw
+# ...but keep the three canonical datasets that are already tracked.
+!data/bonsai.raw
+!data/engine.raw
+!data/mri_woman.raw

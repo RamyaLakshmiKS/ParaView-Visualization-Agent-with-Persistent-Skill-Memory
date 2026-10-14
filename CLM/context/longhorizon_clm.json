@@ -3,43 +3,139 @@
   "trace": [
     {
       "step": 1,
-      "label": "after bonsai",
+      "label": "after aneurism_256x256x256_uint8",
       "lines": 4,
-      "chars": 328,
-      "est_tokens": 82
+      "chars": 403,
+      "est_tokens": 101
     },
     {
       "step": 2,
-      "label": "after engine",
+      "label": "after backpack_512x512x373_uint16",
       "lines": 6,
-      "chars": 447,
-      "est_tokens": 112
+      "chars": 585,
+      "est_tokens": 146
     },
     {
       "step": 3,
-      "label": "after mri_woman",
+      "label": "after beechnut_1024x1024x1546_uint16",
       "lines": 8,
-      "chars": 580,
-      "est_tokens": 145
+      "chars": 779,
+      "est_tokens": 195
+    },
+    {
+      "step": 4,
+      "label": "after blunt_fin_256x128x64_uint8",
+      "lines": 10,
+      "chars": 948,
+      "est_tokens": 237
+    },
+    {
+      "step": 5,
+      "label": "after bonsai",
+      "lines": 12,
+      "chars": 1066,
+      "est_tokens": 266
+    },
+    {
+      "step": 6,
+      "label": "after boston_teapot_256x256x178_uint8",
+      "lines": 14,
+      "chars": 1275,
+      "est_tokens": 319
+    },
+    {
+      "step": 7,
+      "label": "after bunny_512x512x361_uint16",
+      "lines": 16,
+      "chars": 1444,
+      "est_tokens": 361
+    },
+    {
+      "step": 8,
+      "label": "after csafe_heptane_302x302x302_uint8",
+      "lines": 18,
+      "chars": 1635,
+      "est_tokens": 409
+    },
+    {
+      "step": 9,
+      "label": "after engine",
+      "lines": 20,
+      "chars": 1748,
+      "est_tokens": 437
+    },
+    {
+      "step": 10,
+      "label": "after mri_woman",
+      "lines": 22,
+      "chars": 1900,
+      "est_tokens": 475
+    },
+    {
+      "step": 11,
+      "label": "after zeiss_680x680x680_uint8",
+      "lines": 24,
+      "chars": 2082,
+      "est_tokens": 520
     }
   ],
-  "total_lines_written": 193,
-  "lines_discarded": 186,
+  "total_lines_written": 709,
+  "lines_discarded": 686,
   "per_file": [
     {
-      "name": "bonsai",
-      "est_tokens_after": 82,
+      "name": "aneurism_256x256x256_uint8",
+      "est_tokens_after": 101,
       "lines_after": 4
     },
     {
-      "name": "engine",
-      "est_tokens_after": 112,
+      "name": "backpack_512x512x373_uint16",
+      "est_tokens_after": 146,
       "lines_after": 6
     },
     {
-      "name": "mri_woman",
-      "est_tokens_after": 145,
+      "name": "beechnut_1024x1024x1546_uint16",
+      "est_tokens_after": 195,
       "lines_after": 8
+    },
+    {
+      "name": "blunt_fin_256x128x64_uint8",
+      "est_tokens_after": 237,
+      "lines_after": 10
+    },
+    {
+      "name": "bonsai",
+      "est_tokens_after": 266,
+      "lines_after": 12
+    },
+    {
+      "name": "boston_teapot_256x256x178_uint8",
+      "est_tokens_after": 319,
+      "lines_after": 14
+    },
+    {
+      "name": "bunny_512x512x361_uint16",
+      "est_tokens_after": 361,
+      "lines_after": 16
+    },
+    {
+      "name": "csafe_heptane_302x302x302_uint8",
+      "est_tokens_after": 409,
+      "lines_after": 18
+    },
+    {
+      "name": "engine",
+      "est_tokens_after": 437,
+      "lines_after": 20
+    },
+    {
+      "name": "mri_woman",
+      "est_tokens_after": 475,
+      "lines_after": 22
+    },
+    {
+      "name": "zeiss_680x680x680_uint8",
+      "est_tokens_after": 520,
+      "lines_after": 24
     }
   ]
 }
