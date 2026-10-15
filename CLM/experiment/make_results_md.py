@@ -50,7 +50,7 @@ def main() -> int:
     L = []
     L.append("# RESULTS — Context-as-a-File on the Volume-Visualization Agent\n")
     L.append("Self-contained results for the experiment described in "
-             "[`EXPERIMENT_REPORT.md`](EXPERIMENT_REPORT.md). All evidence is inlined "
+             "[`README.md`](README.md). All evidence is inlined "
              "below — correctness, behavior, a full turn-by-turn trace, and the agent's "
              "own context file. Nothing here depends on browsing the `runs/` folder.\n")
     L.append("- **Method:** Context-as-a-File (Shao et al., arXiv:2609.37725 §4.1) — the "

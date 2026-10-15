@@ -51,8 +51,8 @@ artifacts. The strongest evidence lives in this folder:
   `figs/context_trajectory.png`, `figs/behavior_matrix.png`.
 - **Self-contained results report** — [`RESULTS.md`](RESULTS.md) (correctness, a full turn-by-turn
   trace, and the agent's own compacted `CTX.md`, all inlined).
-- **Full behavioral report** — [`REPORT.md`](REPORT.md) and
-  [`EXPERIMENT_REPORT.md`](EXPERIMENT_REPORT.md).
+- **Full behavioral report** — [`REPORT.md`](REPORT.md) (per-seed correctness and per-run detail,
+  rebuilt offline from `runs/`).
 - **Per-run evidence** — `runs/<condition>_<task>_seed<n>/result.json` (per-turn Bash, `CTX.md`
   diffs, snapshots, final answer).
 - **Plain-language narrative** —
@@ -405,8 +405,7 @@ CLM/experiment/
 │   ├── context_trajectory.png # live-context tokens per turn, with edit markers
 │   └── behavior_matrix.png    # observable context-management behavior heatmap
 ├── RESULTS.md                 # self-contained results (correctness, trace, agent's own CTX.md)
-├── REPORT.md                  # offline behavioral report built from runs/
-├── EXPERIMENT_REPORT.md       # full narrative report (method, design, results, limitations)
+├── REPORT.md                  # offline behavioral report built from runs/ (per-seed detail)
 └── README.md                  # this file
 ```
 

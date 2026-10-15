@@ -1,6 +1,6 @@
 # RESULTS — Context-as-a-File on the Volume-Visualization Agent
 
-Self-contained results for the experiment described in [`EXPERIMENT_REPORT.md`](EXPERIMENT_REPORT.md). All evidence is inlined below — correctness, behavior, a full turn-by-turn trace, and the agent's own context file. Nothing here depends on browsing the `runs/` folder.
+Self-contained results for the experiment described in [`README.md`](README.md). All evidence is inlined below — correctness, behavior, a full turn-by-turn trace, and the agent's own context file. Nothing here depends on browsing the `runs/` folder.
 
 - **Method:** Context-as-a-File (Shao et al., arXiv:2609.37725 §4.1) — the agent's live context is an editable `CTX.md` it rewrites with arbitrary Bash.
 - **Model:** Groq `qwen/qwen3.8-27b` (substitute for the paper's unreleased Qwen3.6-27B). **Live-context budget:** 2000 tokens. **Max turns:** 16.
